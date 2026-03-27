@@ -11,7 +11,7 @@ export default function Footer() {
               CLUB54
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Premium coworking, office leasing, and event spaces in a vibrant community ecosystem.
+              Premium coffee shop and event space where community comes together over exceptional drinks and memorable experiences.
             </p>
           </div>
 
@@ -22,18 +22,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/office-leasing" className="text-gray-400 hover:text-red transition-colors">
-                  Office Leasing
-                </Link>
-              </li>
-              <li>
-                <Link href="/coworking" className="text-gray-400 hover:text-red transition-colors">
-                  Coworking Spaces
+                <Link href="/#menu" className="text-gray-400 hover:text-red transition-colors">
+                  Coffee & Menu
                 </Link>
               </li>
               <li>
                 <Link href="/events" className="text-gray-400 hover:text-red transition-colors">
                   Event Hosting
+                </Link>
+              </li>
+              <li>
+                <Link href="/community" className="text-gray-400 hover:text-red transition-colors">
+                  Community Events
                 </Link>
               </li>
             </ul>

@@ -1,48 +1,50 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-black shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-3xl font-bold text-red uppercase tracking-wider">
-              CLUB54
-            </span>
+            <Image 
+              src="/white-logo.png" 
+              alt="Club54 Coffee & Events" 
+              width={120} 
+              height={60}
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/office-leasing" className="text-black hover:text-red transition-colors font-medium">
-              Office Leasing
+            <Link href="/#menu" className="text-white hover:text-red transition-colors font-medium">
+              Menu
             </Link>
-            <Link href="/coworking" className="text-black hover:text-red transition-colors font-medium">
-              Coworking
+            <Link href="/events" className="text-white hover:text-red transition-colors font-medium">
+              Events
             </Link>
-            <Link href="/events" className="text-black hover:text-red transition-colors font-medium">
-              Event Hosting
-            </Link>
-            <Link href="/community" className="text-black hover:text-red transition-colors font-medium">
+            <Link href="/community" className="text-white hover:text-red transition-colors font-medium">
               Community
             </Link>
-            <Link href="/contact" className="bg-red text-white px-6 py-2.5 rounded-lg hover:bg-plum transition-colors font-medium">
-              Contact Us
+            <Link href="/contact" className="bg-red text-white px-6 py-2.5 rounded-lg hover:bg-white hover:text-red transition-colors font-medium">
+              Book Now
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-biscuit transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
           >
             <svg
-              className="w-6 h-6 text-black"
+              className="w-6 h-6 text-white"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -61,42 +63,35 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-biscuit">
+          <div className="md:hidden py-4 border-t border-white/20">
             <div className="flex flex-col space-y-4">
               <Link
-                href="/office-leasing"
-                className="text-black hover:text-red transition-colors font-medium"
+                href="/#menu"
+                className="text-white hover:text-red transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Office Leasing
-              </Link>
-              <Link
-                href="/coworking"
-                className="text-black hover:text-red transition-colors font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Coworking
+                Menu
               </Link>
               <Link
                 href="/events"
-                className="text-black hover:text-red transition-colors font-medium"
+                className="text-white hover:text-red transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Event Hosting
+                Events
               </Link>
               <Link
                 href="/community"
-                className="text-black hover:text-red transition-colors font-medium"
+                className="text-white hover:text-red transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Community
               </Link>
               <Link
                 href="/contact"
-                className="bg-red text-white px-6 py-2.5 rounded-lg hover:bg-plum transition-colors font-medium text-center"
+                className="bg-red text-white px-6 py-2.5 rounded-lg hover:bg-white hover:text-red transition-colors font-medium text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact Us
+                Book Now
               </Link>
             </div>
           </div>

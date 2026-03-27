@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -9,85 +10,102 @@ export default function Home() {
       
       <main>
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-black via-plum to-black text-white min-h-[90vh] flex items-center">
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div className="max-w-4xl">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-wide leading-tight">
-                Where Work Meets <span className="text-red">Community</span>
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
-                Premium office spaces, vibrant coworking, and unforgettable events in one dynamic ecosystem.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
-                  className="bg-red text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red transition-all uppercase tracking-wide text-center"
-                >
-                  Get Started
-                </Link>
-                <Link
-                  href="#features"
-                  className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-black transition-all uppercase tracking-wide text-center border border-white/30"
-                >
-                  Learn More
-                </Link>
+        <section className="relative bg-black text-white min-h-[95vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left side - Content */}
+              <div>
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-wide leading-tight">
+                  Where Coffee Meets <span className="text-red">Community</span>
+                </h1>
+                <p className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
+                  Premium coffee, vibrant atmosphere, and unforgettable events in one dynamic space.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="/contact"
+                    className="bg-red text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red transition-all uppercase tracking-wide text-center"
+                  >
+                    Visit Us Today
+                  </Link>
+                  <Link
+                    href="#menu"
+                    className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-black transition-all uppercase tracking-wide text-center border border-white/30"
+                  >
+                    View Menu
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right side - Coffee Image */}
+              <div className="hidden lg:flex justify-center items-center">
+                <div className="relative w-full max-w-lg">
+                  <Image
+                    src="/hero-coffee.png"
+                    alt="Coffee Latte Art"
+                    width={600}
+                    height={600}
+                    className="w-full h-auto drop-shadow-2xl"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Features Overview */}
-        <section id="features" className="py-20 bg-white">
+        <section id="menu" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 uppercase tracking-wide">
                 What We Offer
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Flexible spaces designed for modern businesses and dynamic communities
+                Exceptional coffee, delicious food, and the perfect venue for your events
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Office Leasing */}
+              {/* Coffee & Drinks */}
               <div className="group bg-biscuit rounded-xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-red rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Office Leasing</h3>
+                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Premium Coffee</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Professional office spaces tailored to your business needs. From private offices to full suites, find your perfect workspace.
+                  Artisan coffee crafted by expert baristas. From espresso classics to signature drinks, we source the finest beans for every cup.
                 </p>
                 <Link
-                  href="/office-leasing"
+                  href="/#menu"
                   className="inline-flex items-center text-red font-semibold hover:text-plum transition-colors uppercase tracking-wide"
                 >
-                  Explore Offices
+                  View Full Menu
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
               </div>
 
-              {/* Coworking */}
+              {/* Food & Pastries */}
               <div className="group bg-biscuit rounded-xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-teal rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Coworking Spaces</h3>
+                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Fresh Food & Pastries</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Flexible desks in a collaborative environment. Hot desks, dedicated spaces, and meeting rooms available.
+                  Daily baked goods, light bites, and full meals. Perfect for breakfast, lunch, or a quick snack with your coffee.
                 </p>
                 <Link
-                  href="/coworking"
+                  href="/#menu"
                   className="inline-flex items-center text-teal font-semibold hover:text-green transition-colors uppercase tracking-wide"
                 >
-                  View Spaces
+                  See Menu
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -101,15 +119,15 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Event Hosting</h3>
+                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Private Events</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Host memorable events in our versatile spaces. Perfect for workshops, launches, networking, and corporate gatherings.
+                  Host your next gathering in our versatile space. Perfect for meetings, celebrations, workshops, live music, and community events.
                 </p>
                 <Link
                   href="/events"
                   className="inline-flex items-center text-orange font-semibold hover:text-mustard transition-colors uppercase tracking-wide"
                 >
-                  Plan Event
+                  Book Event Space
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -125,10 +143,10 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 uppercase tracking-wide">
-                  More Than Just <span className="text-red">Workspace</span>
+                  More Than Just <span className="text-red">Coffee</span>
                 </h2>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                  Club54 is a thriving ecosystem where professionals connect, collaborate, and grow together.
+                  Club54 is a vibrant community hub where coffee lovers connect, create, and celebrate together.
                 </p>
                 
                 <div className="space-y-6">
@@ -139,9 +157,9 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black mb-2 uppercase">Community Ecosystem</h3>
+                      <h3 className="text-xl font-bold text-black mb-2 uppercase">Community Vibes</h3>
                       <p className="text-gray-600">
-                        Join a network of entrepreneurs, creatives, and professionals. Regular networking events and collaborative opportunities.
+                        Join a welcoming community of coffee enthusiasts, creatives, and locals. Regular gatherings and shared experiences.
                       </p>
                     </div>
                   </div>
@@ -149,13 +167,13 @@ export default function Home() {
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-pink rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black mb-2 uppercase">Retail + Lifestyle</h3>
+                      <h3 className="text-xl font-bold text-black mb-2 uppercase">Live Events</h3>
                       <p className="text-gray-600">
-                        On-site cafe, fitness center, and curated retail spaces. Everything you need for work-life balance.
+                        Open mic nights, acoustic sessions, art exhibitions, and pop-up markets. There's always something happening at Club54.
                       </p>
                     </div>
                   </div>
@@ -163,13 +181,14 @@ export default function Home() {
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-mustard rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black mb-2 uppercase">Flexible Multi-Use Spaces</h3>
+                      <h3 className="text-xl font-bold text-black mb-2 uppercase">Cozy Atmosphere</h3>
                       <p className="text-gray-600">
-                        Adaptable spaces that transform from quiet work zones to vibrant event venues. Your space, your way.
+                        Comfortable seating, great music, and warm ambiance. Whether you're working, relaxing, or socializing, feel right at home.
                       </p>
                     </div>
                   </div>
@@ -179,41 +198,41 @@ export default function Home() {
                   href="/community"
                   className="inline-block mt-8 bg-purple text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-black transition-colors uppercase tracking-wide"
                 >
-                  Explore Community
+                  Join Our Community
                 </Link>
               </div>
 
               <div className="relative">
                 <div className="bg-gradient-to-br from-red to-orange rounded-2xl p-8 text-white">
-                  <h3 className="text-3xl font-bold mb-6 uppercase">Check Availability</h3>
+                  <h3 className="text-3xl font-bold mb-6 uppercase">Upcoming Events</h3>
                   <div className="space-y-4">
                     <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-2 h-2 bg-green rounded-full"></div>
-                        <span className="font-semibold">Private Offices</span>
+                        <span className="font-semibold">Live Jazz Night</span>
                       </div>
-                      <p className="text-sm text-white/90">Available now</p>
+                      <p className="text-sm text-white/90">This Friday at 7 PM</p>
                     </div>
                     <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-2 h-2 bg-green rounded-full"></div>
-                        <span className="font-semibold">Hot Desks</span>
+                        <span className="font-semibold">Coffee Tasting Workshop</span>
                       </div>
-                      <p className="text-sm text-white/90">Available now</p>
+                      <p className="text-sm text-white/90">Saturday at 2 PM</p>
                     </div>
                     <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-2 h-2 bg-mustard rounded-full"></div>
-                        <span className="font-semibold">Event Space</span>
+                        <span className="font-semibold">Open Mic Night</span>
                       </div>
-                      <p className="text-sm text-white/90">Limited availability</p>
+                      <p className="text-sm text-white/90">Next Thursday at 8 PM</p>
                     </div>
                   </div>
                   <Link
-                    href="/contact"
+                    href="/events"
                     className="block w-full mt-6 bg-white text-red px-6 py-3 rounded-lg font-semibold text-center hover:bg-biscuit transition-colors uppercase tracking-wide"
                   >
-                    Request Information
+                    See All Events
                   </Link>
                 </div>
               </div>
@@ -225,16 +244,16 @@ export default function Home() {
         <section className="py-20 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wide">
-              Ready to Join <span className="text-red">Club54</span>?
+              Ready to Experience <span className="text-red">Club54</span>?
             </h2>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Get in touch with our team to discuss your workspace needs and schedule a tour.
+              Visit us today for exceptional coffee, or get in touch to book your next event.
             </p>
             <Link
               href="/contact"
               className="inline-block bg-red text-white px-10 py-5 rounded-lg font-semibold text-xl hover:bg-white hover:text-red transition-all uppercase tracking-wide"
             >
-              Contact Us Today
+              Visit or Book Today
             </Link>
           </div>
         </section>
