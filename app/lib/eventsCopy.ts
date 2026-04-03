@@ -82,6 +82,8 @@ export const EVENTS_COPY = {
     eventsLoading: 'Loading events…',
     eventsEmpty: 'No events listed for this language yet. Check back soon.',
     eventsError: 'Could not load events. Please try again later.',
+    eventsFirebaseMissing:
+      'Live events are not loading because Firebase environment variables are missing on this deployment. In Vercel: Project → Settings → Environment Variables, add every NEXT_PUBLIC_FIREBASE_* value from your Firebase web app config, apply to Production, then redeploy.',
 
     eventsSpotlightTitle: 'Spotlight & seats',
     eventsSpotlightSub: 'Quick highlights with dates and availability.',
@@ -172,6 +174,8 @@ export const EVENTS_COPY = {
     eventsLoading: 'កំពុងផ្ទុកព្រឹត្តិការណ៍…',
     eventsEmpty: 'មិនទាន់មានព្រឹត្តិការណ៍សម្រាប់ភាសានេះទេ។ សូមត្រឡប់មកមើលពេលក្រោយ។',
     eventsError: 'មិនអាចផ្ទុកព្រឹត្តិការណ៍បានទេ។ សូមព្យាយាមម្តងទៀត។',
+    eventsFirebaseMissing:
+      'ព្រឹត្តិការណ៍ផ្ទាល់មិនផ្ទុកពី Firebase ទេ ពីព្រោះអាប់ដេតមិនមានអ្វីដែលត្រូវការ។ ក្នុង Vercel បន្ថែម NEXT_PUBLIC_FIREBASE_* ទាំងអស់ ហើយ deploy ឡើងវិញ។',
 
     eventsSpotlightTitle: 'ពិសេស និងកៅអី',
     eventsSpotlightSub: 'ព័ត៌មានខ្លី រួមថ្ងៃ និងកន្លែងនៅសល់។',

@@ -85,6 +85,11 @@ export function useFirestoreEvents(lang: SiteLanguage) {
       setEvents([]);
       setLoading(false);
       setError(null);
+      if (typeof window !== 'undefined') {
+        console.warn(
+          '[club54] Firestore: Firebase is not initialized. Set NEXT_PUBLIC_FIREBASE_API_KEY and NEXT_PUBLIC_FIREBASE_PROJECT_ID in your host (e.g. Vercel → Environment Variables), then redeploy. Other NEXT_PUBLIC_FIREBASE_* vars should match your Firebase web app config.',
+        );
+      }
       return;
     }
 
@@ -109,7 +114,9 @@ export function useFirestoreEvents(lang: SiteLanguage) {
       } catch (e) {
         if (!cancelled) {
           setEvents([]);
-          setError(e instanceof Error ? e.message : 'Failed to load events');
+          const message = e instanceof Error ? e.message : 'Failed to load events';
+          setError(message);
+          console.error('[club54] Firestore `events` fetch failed:', e);
         }
       } finally {
         if (!cancelled) setLoading(false);
@@ -124,3 +131,4 @@ export function useFirestoreEvents(lang: SiteLanguage) {
 
   return { events, loading, error, configured: getFirestoreDb() !== null };
 }
+

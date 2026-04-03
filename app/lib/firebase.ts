@@ -21,3 +21,13 @@ export function getFirestoreDb(): Firestore | null {
   const app = getApp();
   return app ? getFirestore(app) : null;
 }
+
+/** True when the client bundle has the minimum vars to initialize Firebase (same condition as `getFirestoreDb()`). */
+export function isFirebaseClientConfigured(): boolean {
+  return Boolean(
+    typeof process.env.NEXT_PUBLIC_FIREBASE_API_KEY === 'string' &&
+      process.env.NEXT_PUBLIC_FIREBASE_API_KEY.length > 0 &&
+      typeof process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID === 'string' &&
+      process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID.length > 0,
+  );
+}

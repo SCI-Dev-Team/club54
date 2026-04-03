@@ -135,7 +135,9 @@ export function useFirestoreUpcomingEvents(lang: SiteLanguage) {
       } catch (e) {
         if (!cancelled) {
           setUpcoming([]);
-          setError(e instanceof Error ? e.message : 'Failed to load upcoming events');
+          const message = e instanceof Error ? e.message : 'Failed to load upcoming events';
+          setError(message);
+          console.error('[club54] Firestore `upcomingEvents` fetch failed:', e);
         }
       } finally {
         if (!cancelled) setLoading(false);
