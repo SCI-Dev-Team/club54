@@ -1,363 +1,224 @@
+'use client';
+
+import type { ReactNode } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import InquiryForm from '../components/InquiryForm';
+import { useSiteLanguage } from '../lib/useSiteLanguage';
+import { EVENTS_COPY } from '../lib/eventsCopy';
+
+function CheckItem({ children }: { children: ReactNode }) {
+  return (
+    <li className="flex items-start gap-2.5 text-black">
+      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red" aria-hidden />
+      <span>{children}</span>
+    </li>
+  );
+}
+
+function FeatureCard({
+  title,
+  description,
+  children,
+}: {
+  title: string;
+  description: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="rounded-xl border border-black/10 bg-white p-6 shadow-sm transition-shadow hover:border-red/40 hover:shadow-md">
+      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-red text-white">
+        {children}
+      </div>
+      <h3 className="text-base font-semibold uppercase tracking-wide text-black">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-black/75">{description}</p>
+    </div>
+  );
+}
+
+const FEATURE_ICONS: ReactNode[] = [
+  <svg key="0" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M12 8.25c-1.657 0-3 1.007-3 2.25s1.343 2.25 3 2.25 3-1.007 3-2.25-1.343-2.25-3-2.25zM12 8.25V3m0 5.25v11.25m0 0c1.657 0 3-1.007 3-2.25s-1.343-2.25-3-2.25-3 1.007-3 2.25 1.343 2.25 3 2.25z"
+    />
+  </svg>,
+  <svg key="1" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+    />
+  </svg>,
+  <svg key="2" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+    />
+  </svg>,
+  <svg key="3" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
+    />
+  </svg>,
+  <svg key="4" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+    />
+  </svg>,
+  <svg key="5" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M8.288 15.036a5.5 5.5 0 017.424 0M5.106 11.289a9 9 0 0113.788 0M1.757 7.575a13.5 13.5 0 0120.486 0M12.75 18.75h.008v.008h-.008v-.008z"
+    />
+  </svg>,
+  <svg key="6" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.25 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"
+    />
+  </svg>,
+  <svg key="7" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+    />
+  </svg>,
+];
 
 export default function EventsPage() {
+  const lang = useSiteLanguage();
+  const t = EVENTS_COPY[lang];
+
   return (
     <>
       <Header />
-      
-      <main>
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-orange to-mustard text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 uppercase tracking-wide">
-                Event Hosting
-              </h1>
-              <p className="text-xl text-gray-100 leading-relaxed">
-                Host unforgettable events in our versatile, modern spaces. From intimate workshops to large corporate gatherings, we have the perfect venue for your occasion.
-              </p>
-            </div>
+
+      <main className="bg-white text-black">
+        {/* Hero */}
+        <section className="border-b border-black/10 bg-white py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-red">{t.heroEyebrow}</p>
+            <h1 className="mb-6 text-4xl font-semibold leading-tight tracking-tight text-black md:text-5xl">
+              {t.heroTitle}
+            </h1>
+            <p className="text-lg leading-relaxed text-black/80">{t.heroBody}</p>
           </div>
         </section>
 
-        {/* Event Types */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-black mb-4 uppercase tracking-wide">
-                Perfect For Every Occasion
-              </h2>
-              <p className="text-xl text-gray-600">
-                Flexible spaces that adapt to your event needs
-              </p>
+        {/* What you can host */}
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <h2 className="text-3xl font-semibold text-black md:text-4xl">{t.hostTitle}</h2>
+              <p className="mt-3 text-lg text-black/75">{t.hostSub}</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Corporate Events */}
-              <div className="bg-gradient-to-br from-orange/10 to-mustard/10 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 bg-orange rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-red text-white">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M12 8.25c-1.657 0-3 1.007-3 2.25s1.343 2.25 3 2.25 3-1.007 3-2.25-1.343-2.25-3-2.25zM12 8.25V3m0 5.25v11.25m0 0c1.657 0 3-1.007 3-2.25s-1.343-2.25-3-2.25-3 1.007-3 2.25 1.343 2.25 3 2.25z"
+                    />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Corporate Events</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-orange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Team building activities
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-orange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Company meetings
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-orange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Annual conferences
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-orange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Training sessions
-                  </li>
+                <h3 className="mb-4 text-xl font-semibold text-black">{t.cafeColumnTitle}</h3>
+                <ul className="space-y-3 text-black">
+                  {t.cafeItems.map((line) => (
+                    <CheckItem key={line}>{line}</CheckItem>
+                  ))}
                 </ul>
               </div>
 
-              {/* Workshops & Seminars */}
-              <div className="bg-gradient-to-br from-teal/10 to-green/10 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 bg-teal rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-red text-white">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008H17.25v-.008zm0 3h.008v.008H17.25v-.008zm0 3h.008v.008H17.25v-.008z"
+                    />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Workshops & Seminars</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Educational workshops
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Professional seminars
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Masterclasses
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Skill development courses
-                  </li>
+                <h3 className="mb-4 text-xl font-semibold text-black">{t.roomColumnTitle}</h3>
+                <ul className="space-y-3 text-black">
+                  {t.roomItems.map((line) => (
+                    <CheckItem key={line}>{line}</CheckItem>
+                  ))}
                 </ul>
               </div>
 
-              {/* Product Launches */}
-              <div className="bg-gradient-to-br from-purple/10 to-pink/10 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 bg-purple rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+              <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-red text-white">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M18 18.72a9.09 9.09 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12c-1.657 0-3.156.67-4.243 1.757M12 12V9m0 3H9m3 0h3m-3 0v3m0-3V9"
+                    />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Product Launches</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-purple mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Product unveilings
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-purple mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Brand activations
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-purple mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Press conferences
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-purple mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Media events
-                  </li>
-                </ul>
-              </div>
-
-              {/* Networking Events */}
-              <div className="bg-gradient-to-br from-red/10 to-plum/10 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 bg-red rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Networking Events</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-red mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Industry mixers
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-red mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Professional meetups
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-red mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Happy hours
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-red mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Panel discussions
-                  </li>
-                </ul>
-              </div>
-
-              {/* Private Functions */}
-              <div className="bg-gradient-to-br from-pink/10 to-purple/10 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 bg-pink rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Private Functions</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-pink mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Celebrations & parties
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-pink mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Milestone events
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-pink mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Client appreciation
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-pink mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    VIP gatherings
-                  </li>
-                </ul>
-              </div>
-
-              {/* Community Events */}
-              <div className="bg-gradient-to-br from-mustard/10 to-orange/10 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 bg-mustard rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-black mb-4 uppercase">Community Events</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-mustard mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Local meetups
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-mustard mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Charity fundraisers
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-mustard mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Art exhibitions
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-mustard mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Pop-up markets
-                  </li>
+                <h3 className="mb-4 text-xl font-semibold text-black">{t.otherColumnTitle}</h3>
+                <ul className="space-y-3 text-black">
+                  {t.otherItems.map((line) => (
+                    <CheckItem key={line}>{line}</CheckItem>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Event Space Features */}
-        <section className="py-20 bg-gradient-to-br from-biscuit/30 to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-black mb-12 text-center uppercase tracking-wide">
-              Event Space Features
-            </h2>
+        {/* Space & service */}
+        <section className="border-t border-black/10 bg-black py-16 text-white md:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 text-center">
+              <h2 className="text-3xl font-semibold text-white md:text-4xl">{t.spaceTitle}</h2>
+              <div className="mx-auto mt-4 h-1 w-14 bg-red" aria-hidden />
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-2 uppercase">AV Equipment</h3>
-                <p className="text-sm text-gray-600">Professional sound system, projectors, screens, and microphones</p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="w-12 h-12 bg-teal rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-2 uppercase">Flexible Layout</h3>
-                <p className="text-sm text-gray-600">Modular furniture and configurable space arrangements</p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="w-12 h-12 bg-purple rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-2 uppercase">Catering Ready</h3>
-                <p className="text-sm text-gray-600">Full kitchen access and catering setup options</p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="w-12 h-12 bg-mustard rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-2 uppercase">Event Support</h3>
-                <p className="text-sm text-gray-600">Dedicated event coordinator and on-site tech support</p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="w-12 h-12 bg-pink rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-2 uppercase">Branding Options</h3>
-                <p className="text-sm text-gray-600">Customize space with your branding and signage</p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="w-12 h-12 bg-green rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-2 uppercase">Security</h3>
-                <p className="text-sm text-gray-600">Secure access control and 24/7 security presence</p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="w-12 h-12 bg-red rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-2 uppercase">Atmosphere</h3>
-                <p className="text-sm text-gray-600">Customizable lighting and ambiance controls</p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="w-12 h-12 bg-plum rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-2 uppercase">Capacity</h3>
-                <p className="text-sm text-gray-600">Spaces for 10-200 guests depending on configuration</p>
-              </div>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {t.features.map((f, i) => (
+                <FeatureCard key={f.title} title={f.title} description={f.description}>
+                  {FEATURE_ICONS[i]}
+                </FeatureCard>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Inquiry Form */}
-        <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-black mb-4 uppercase tracking-wide">
-                Plan Your Event
-              </h2>
-              <p className="text-xl text-gray-600">
-                Share your event details and we'll help bring your vision to life
-              </p>
+        {/* Inquiry */}
+        <section className="border-t border-black/10 bg-white py-16 md:py-20">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-semibold text-black md:text-4xl">{t.inquiryTitle}</h2>
+              <p className="mt-3 text-lg text-black/75">{t.inquirySub}</p>
             </div>
 
-            <InquiryForm formType="event" title="Event Hosting Inquiry" />
+            <InquiryForm formType="event" title={t.inquiryFormTitle} key={lang} />
           </div>
         </section>
       </main>
