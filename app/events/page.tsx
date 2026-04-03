@@ -1,11 +1,15 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import InquiryForm from '../components/InquiryForm';
 import { useSiteLanguage } from '../lib/useSiteLanguage';
 import { EVENTS_COPY } from '../lib/eventsCopy';
+import { formatEventDate, useFirestoreEvents } from '../lib/useFirestoreEvents';
+import { useFirestoreUpcomingEvents } from '../lib/useFirestoreUpcomingEvents';
 
 function CheckItem({ children }: { children: ReactNode }) {
   return (
@@ -103,9 +107,40 @@ const FEATURE_ICONS: ReactNode[] = [
   </svg>,
 ];
 
+function EventCta({ href, label }: { href: string; label: string }) {
+  const className =
+    'inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-red transition-colors hover:text-black';
+  const chevron = (
+    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  );
+  if (href.startsWith('/') && !href.startsWith('//')) {
+    return (
+      <Link href={href} className={className}>
+        {label}
+        {chevron}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} className={className}>
+      {label}
+      {chevron}
+    </a>
+  );
+}
+
 export default function EventsPage() {
   const lang = useSiteLanguage();
   const t = EVENTS_COPY[lang];
+  const { events, loading, error, configured } = useFirestoreEvents(lang);
+  const {
+    upcoming,
+    loading: upcomingLoading,
+    error: upcomingError,
+    configured: upcomingConfigured,
+  } = useFirestoreUpcomingEvents(lang);
 
   return (
     <>
@@ -123,8 +158,128 @@ export default function EventsPage() {
           </div>
         </section>
 
+        {/* Firestore: scheduled events (`events`) */}
+        {configured ? (
+          <section className="border-b border-black/10 bg-black/[0.02] py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mb-10 text-center">
+                <h2 className="text-3xl font-semibold text-black md:text-4xl">{t.eventsScheduleTitle}</h2>
+                <p className="mt-3 text-lg text-black/75">{t.eventsScheduleSub}</p>
+                <div className="mx-auto mt-4 h-1 w-14 bg-red" aria-hidden />
+              </div>
+
+              {loading ? (
+                <p className="text-center text-black/70">{t.eventsLoading}</p>
+              ) : error ? (
+                <p className="text-center text-red">{t.eventsError}</p>
+              ) : events.length === 0 ? (
+                <p className="text-center text-black/70">{t.eventsEmpty}</p>
+              ) : (
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  {events.map((ev) => (
+                    <article
+                      key={ev.documentId}
+                      className="flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-shadow hover:border-red/40 hover:shadow-md"
+                    >
+                      <div className="relative aspect-[16/10] w-full bg-black/5">
+                        {ev.image ? (
+                          <Image
+                            src={ev.image}
+                            alt={ev.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            unoptimized
+                          />
+                        ) : null}
+                      </div>
+                      <div className="flex flex-1 flex-col p-6">
+                        <p className="text-xs font-medium uppercase tracking-widest text-red">
+                          {formatEventDate(ev.date, lang)}
+                        </p>
+                        {ev.location ? (
+                          <p className="mt-1 text-sm text-black/60">{ev.location}</p>
+                        ) : null}
+                        <h3 className="mt-3 text-xl font-semibold text-black">{ev.title}</h3>
+                        <p className="mt-2 flex-1 text-sm leading-relaxed text-black/75">{ev.description}</p>
+                        <div className="mt-6">
+                          <EventCta href={ev.ctaHref} label={ev.ctaLabel} />
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+        ) : null}
+
+        {/* Firestore: spotlight (`upcomingEvents`) */}
+        {upcomingConfigured ? (
+          <section className="border-b border-black/10 bg-white py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mb-10 text-center">
+                <h2 className="text-3xl font-semibold text-black md:text-4xl">{t.eventsSpotlightTitle}</h2>
+                <p className="mt-3 text-lg text-black/75">{t.eventsSpotlightSub}</p>
+                <div className="mx-auto mt-4 h-1 w-14 bg-red" aria-hidden />
+              </div>
+
+              {upcomingLoading ? (
+                <p className="text-center text-black/70">{t.eventsSpotlightLoading}</p>
+              ) : upcomingError ? (
+                <p className="text-center text-red">{t.eventsSpotlightError}</p>
+              ) : upcoming.length === 0 ? (
+                <p className="text-center text-black/70">{t.eventsSpotlightEmpty}</p>
+              ) : (
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  {upcoming.map((ev) => (
+                    <article
+                      key={ev.documentId}
+                      className="flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-black/[0.02] shadow-sm transition-shadow hover:border-red/40 hover:shadow-md"
+                    >
+                      <div className="relative aspect-[16/10] w-full bg-black/5">
+                        {ev.image ? (
+                          <Image
+                            src={ev.image}
+                            alt={ev.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            unoptimized
+                          />
+                        ) : null}
+                      </div>
+                      <div className="flex flex-1 flex-col p-6">
+                        {ev.type ? (
+                          <span
+                            className={`mb-3 inline-flex w-fit rounded px-2 py-1 text-xs font-semibold uppercase tracking-wide ${ev.typeColor}`}
+                          >
+                            {ev.type}
+                          </span>
+                        ) : null}
+                        <h3 className="text-xl font-semibold text-black">{ev.title}</h3>
+                        <p className="mt-2 text-sm text-black/70">
+                          {[ev.day, ev.month, ev.year].filter(Boolean).join(' ')}
+                          {ev.location ? ` · ${ev.location}` : ''}
+                        </p>
+                        {ev.spots ? (
+                          <p
+                            className={`mt-3 text-sm ${ev.spotsUrgent ? 'font-semibold text-red' : 'text-black/60'}`}
+                          >
+                            {ev.spots}
+                          </p>
+                        ) : null}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+        ) : null}
+
         {/* What you can host */}
-        <section className="py-16 md:py-20">
+        {/* <section className="py-16 md:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <h2 className="text-3xl font-semibold text-black md:text-4xl">{t.hostTitle}</h2>
@@ -190,7 +345,7 @@ export default function EventsPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Space & service */}
         <section className="border-t border-black/10 bg-black py-16 text-white md:py-20">

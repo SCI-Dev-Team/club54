@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Firestore `upcomingEvents.typeColor` — add new arbitrary combos here so Tailwind generates them */
+@source inline("text-[#CC0000] bg-red-50");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

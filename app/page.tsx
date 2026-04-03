@@ -6,10 +6,35 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { useSiteLanguage } from './lib/useSiteLanguage';
 import { HOME_COPY } from './lib/homeCopy';
+import { formatEventDate, useFirestoreEvents } from './lib/useFirestoreEvents';
+import { useFirestoreUpcomingEvents } from './lib/useFirestoreUpcomingEvents';
+
+function SidebarEventCta({ href, label }: { href: string; label: string }) {
+  const className =
+    'text-xs font-semibold uppercase tracking-wide text-red transition-colors hover:text-white';
+  if (href.startsWith('/') && !href.startsWith('//')) {
+    return (
+      <Link href={href} className={className}>
+        {label}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} className={className}>
+      {label}
+    </a>
+  );
+}
 
 export default function Home() {
   const lang = useSiteLanguage();
   const t = HOME_COPY[lang];
+  const { events, loading: eventsLoading, configured } = useFirestoreEvents(lang);
+  const { upcoming, loading: upcomingLoading } = useFirestoreUpcomingEvents(lang);
+
+  const firebaseConfigured = configured;
+  const firestoreLoading = firebaseConfigured && (eventsLoading || upcomingLoading);
+  const hasFirestoreRows = events.length > 0 || upcoming.length > 0;
 
   return (
     <>
@@ -227,27 +252,143 @@ export default function Home() {
                     {t.upcoming} <span className="text-red">{t.eventsWord}</span>
                   </h3>
                   <div className="space-y-4">
-                    <div className="rounded-lg border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
-                      <div className="mb-2 flex items-center gap-3">
-                        <div className="h-2 w-2 shrink-0 rounded-full bg-red"></div>
-                        <span className="font-semibold">{t.event1Title}</span>
-                      </div>
-                      <p className="text-sm text-white/80">{t.event1Time}</p>
-                    </div>
-                    <div className="rounded-lg border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
-                      <div className="mb-2 flex items-center gap-3">
-                        <div className="h-2 w-2 shrink-0 rounded-full bg-red"></div>
-                        <span className="font-semibold">{t.event2Title}</span>
-                      </div>
-                      <p className="text-sm text-white/80">{t.event2Time}</p>
-                    </div>
-                    <div className="rounded-lg border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
-                      <div className="mb-2 flex items-center gap-3">
-                        <div className="h-2 w-2 shrink-0 rounded-full bg-white"></div>
-                        <span className="font-semibold">{t.event3Title}</span>
-                      </div>
-                      <p className="text-sm text-white/80">{t.event3Time}</p>
-                    </div>
+                    {firestoreLoading ? (
+                      <p className="text-sm text-white/70">{t.upcomingEventsLoading}</p>
+                    ) : firebaseConfigured && hasFirestoreRows ? (
+                      <>
+                        {events.length > 0 ? (
+                          <div>
+                            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/50">
+                              {t.homeSidebarCalendarTitle}
+                            </p>
+                            <div className="space-y-4">
+                              {events.slice(0, 3).map((ev) => (
+                                <div
+                                  key={ev.documentId}
+                                  className="rounded-lg border border-white/20 bg-white/10 p-4 backdrop-blur-sm"
+                                >
+                                  <div className="flex gap-3">
+                                    {ev.image ? (
+                                      <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-md bg-black/30">
+                                        <Image
+                                          src={ev.image}
+                                          alt={ev.title}
+                                          fill
+                                          className="object-cover"
+                                          sizes="64px"
+                                          unoptimized
+                                        />
+                                      </div>
+                                    ) : null}
+                                    <div className="min-w-0 flex-1">
+                                      <div className="mb-1 flex items-start gap-2">
+                                        <div
+                                          className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-red"
+                                          aria-hidden
+                                        />
+                                        <span className="font-semibold leading-snug">{ev.title}</span>
+                                      </div>
+                                      <p className="text-sm text-white/80">
+                                        {formatEventDate(ev.date, lang)}
+                                      </p>
+                                      {ev.location ? (
+                                        <p className="mt-1 text-xs text-white/60">{ev.location}</p>
+                                      ) : null}
+                                      <div className="mt-2">
+                                        <SidebarEventCta href={ev.ctaHref} label={ev.ctaLabel} />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ) : null}
+                        {upcoming.length > 0 ? (
+                          <div
+                            className={events.length > 0 ? 'border-t border-white/15 pt-4' : undefined}
+                          >
+                            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/50">
+                              {t.homeSidebarSpotlightTitle}
+                            </p>
+                            <div className="space-y-4">
+                              {upcoming.map((ev) => (
+                                <div
+                                  key={ev.documentId}
+                                  className="rounded-lg border border-white/20 bg-white/10 p-4 backdrop-blur-sm"
+                                >
+                                  <div className="flex gap-3">
+                                    {ev.image ? (
+                                      <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-md bg-black/30">
+                                        <Image
+                                          src={ev.image}
+                                          alt={ev.title}
+                                          fill
+                                          className="object-cover"
+                                          sizes="64px"
+                                          unoptimized
+                                        />
+                                      </div>
+                                    ) : null}
+                                    <div className="min-w-0 flex-1">
+                                      {ev.type ? (
+                                        <span
+                                          className={`mb-2 inline-block rounded px-2 py-0.5 text-xs font-semibold uppercase tracking-wide ${ev.typeColor}`}
+                                        >
+                                          {ev.type}
+                                        </span>
+                                      ) : null}
+                                      <div className="mb-1 flex items-start gap-2">
+                                        <div
+                                          className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-red"
+                                          aria-hidden
+                                        />
+                                        <span className="font-semibold leading-snug">{ev.title}</span>
+                                      </div>
+                                      <p className="text-sm text-white/80">
+                                        {[ev.day, ev.month, ev.year].filter(Boolean).join(' ')}
+                                        {ev.location ? ` · ${ev.location}` : ''}
+                                      </p>
+                                      {ev.spots ? (
+                                        <p
+                                          className={`mt-1 text-sm ${ev.spotsUrgent ? 'font-medium text-amber-300' : 'text-white/70'}`}
+                                        >
+                                          {ev.spots}
+                                        </p>
+                                      ) : null}
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ) : null}
+                      </>
+                    ) : (
+                      <>
+                        <div className="rounded-lg border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                          <div className="mb-2 flex items-center gap-3">
+                            <div className="h-2 w-2 shrink-0 rounded-full bg-red"></div>
+                            <span className="font-semibold">{t.event1Title}</span>
+                          </div>
+                          <p className="text-sm text-white/80">{t.event1Time}</p>
+                        </div>
+                        <div className="rounded-lg border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                          <div className="mb-2 flex items-center gap-3">
+                            <div className="h-2 w-2 shrink-0 rounded-full bg-red"></div>
+                            <span className="font-semibold">{t.event2Title}</span>
+                          </div>
+                          <p className="text-sm text-white/80">{t.event2Time}</p>
+                        </div>
+                        <div className="rounded-lg border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                          <div className="mb-2 flex items-center gap-3">
+                            <div className="h-2 w-2 shrink-0 rounded-full bg-white"></div>
+                            <span className="font-semibold">{t.event3Title}</span>
+                          </div>
+                          <p className="text-sm text-white/80">{t.event3Time}</p>
+                        </div>
+                      </>
+                    )}
                   </div>
                   <Link
                     href="/events"

@@ -76,6 +76,18 @@ export const EVENTS_COPY = {
     inquirySub:
       'Tell us about your café idea, room needs, or community event—we’ll reply with what’s possible.',
     inquiryFormTitle: 'Café & room inquiry',
+
+    eventsScheduleTitle: 'Upcoming events',
+    eventsScheduleSub: 'Workshops, trainings, and gatherings from our calendar.',
+    eventsLoading: 'Loading events…',
+    eventsEmpty: 'No events listed for this language yet. Check back soon.',
+    eventsError: 'Could not load events. Please try again later.',
+
+    eventsSpotlightTitle: 'Spotlight & seats',
+    eventsSpotlightSub: 'Quick highlights with dates and availability.',
+    eventsSpotlightLoading: 'Loading spotlight…',
+    eventsSpotlightEmpty: 'No spotlight items for this language yet.',
+    eventsSpotlightError: 'Could not load spotlight items.',
   },
   km: {
     heroEyebrow: 'កន្លែងសហគមន៍ · កាហ្វេអង្គការមិនរកប្រាក់ចំណេញ',
@@ -154,5 +166,17 @@ export const EVENTS_COPY = {
     inquirySub:
       'ប្រាប់យើងពីគំនិតកាហ្វេ តម្រូវការបន្ទប់ ឬព្រឹត្តិការណ៍សហគមន៍—យើងនឹងឆ្លើយតបអំពីអ្វីដែលអាចធ្វើបាន។',
     inquiryFormTitle: 'សំណួរកាហ្វេ និងបន្ទប់',
+
+    eventsScheduleTitle: 'ព្រឹត្តិការណ៍នាពេលខាងមុខ',
+    eventsScheduleSub: 'សិក្ខាសាលា ការបណ្តុះបណ្តាល និងការជួបជុំពីប្រតិទិនរបស់យើង។',
+    eventsLoading: 'កំពុងផ្ទុកព្រឹត្តិការណ៍…',
+    eventsEmpty: 'មិនទាន់មានព្រឹត្តិការណ៍សម្រាប់ភាសានេះទេ។ សូមត្រឡប់មកមើលពេលក្រោយ។',
+    eventsError: 'មិនអាចផ្ទុកព្រឹត្តិការណ៍បានទេ។ សូមព្យាយាមម្តងទៀត។',
+
+    eventsSpotlightTitle: 'ពិសេស និងកៅអី',
+    eventsSpotlightSub: 'ព័ត៌មានខ្លី រួមថ្ងៃ និងកន្លែងនៅសល់។',
+    eventsSpotlightLoading: 'កំពុងផ្ទុកព័ត៌មានពិសេស…',
+    eventsSpotlightEmpty: 'មិនទាន់មានរបស់ពិសេសសម្រាប់ភាសានេះទេ។',
+    eventsSpotlightError: 'មិនអាចផ្ទុកព័ត៌មានពិសេសបានទេ។',
   },
 } as const;

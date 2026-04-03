@@ -55,6 +55,9 @@ export const HOME_COPY = {
     event3Title: 'Open Mic Night',
     event3Time: 'Next Thursday at 8 PM',
     seeAllEvents: 'See All Events',
+    upcomingEventsLoading: 'Loading…',
+    homeSidebarCalendarTitle: 'On the calendar',
+    homeSidebarSpotlightTitle: 'Spotlight',
 
     readyPrefix: 'Ready to Experience',
     readyAccent: 'Club54',
@@ -118,6 +121,9 @@ export const HOME_COPY = {
     event3Title: 'យប់បើកមីក្រូហ្វូន',
     event3Time: 'ថ្ងៃព្រហស្បតិ៍ក្រោយម៉ោង ៨ យប់',
     seeAllEvents: 'មើលព្រឹត្តិការណ៍ទាំងអស់',
+    upcomingEventsLoading: 'កំពុងផ្ទុក…',
+    homeSidebarCalendarTitle: 'ក្នុងប្រតិទិន',
+    homeSidebarSpotlightTitle: 'ពិសេស',
 
     readyPrefix: 'ត្រៀមរីករាយជាមួយ',
     readyAccent: 'Club54',
