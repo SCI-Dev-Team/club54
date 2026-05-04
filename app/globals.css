@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @import "tailwindcss";
 
 /* Firestore `upcomingEvents.typeColor` — add new arbitrary combos here so Tailwind generates them */
@@ -11,8 +12,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-heading: var(--font-oswald);
-  --font-body: var(--font-lato);
+  --font-heading: var(--font-oswald), "Google Sans", sans-serif;
+  /* Latin: Lato first; Khmer and other glyphs: fall back to Google Sans */
+  --font-body: "Lato", "Google Sans", sans-serif;
   
   /* Primary Colors */
   --color-red: #db271c;
@@ -39,11 +41,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-lato), sans-serif;
+  font-family: "Lato", "Google Sans", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-oswald), sans-serif;
+  font-family: var(--font-oswald), "Google Sans", sans-serif;
   font-weight: 600;
   letter-spacing: 0.02em;
 }

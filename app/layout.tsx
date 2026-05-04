@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Oswald, Lato } from "next/font/google";
+import { Oswald } from "next/font/google";
 import "./globals.css";
 
 const oswald = Oswald({
   variable: "--font-oswald",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-});
-
-const lato = Lato({
-  variable: "--font-lato",
-  subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${oswald.variable} ${lato.variable} h-full antialiased`}
+      className={`${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
