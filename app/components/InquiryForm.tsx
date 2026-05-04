@@ -95,7 +95,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red focus:border-transparent"
-              placeholder="john@company.com"
+              placeholder="Club54.navahub@gmail.com"
             />
           </div>
 
@@ -110,7 +110,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
               value={formData.phone}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red focus:border-transparent"
-              placeholder="+1 (555) 123-4567"
+              placeholder="+855 10 542 654"
             />
           </div>
 

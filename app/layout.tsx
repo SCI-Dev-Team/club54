@@ -17,7 +17,7 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "Club 54 — Social innovation café & youth collaborative space",
   description:
-    "Concept overview: a social innovation café and collaborative workspace empowering children and youth through creativity, skills, and community engagement—inspired by CRC Article 54.",
+    "Concept overview: a social innovation café and collaborative workspace empowering children and youth through creativity, skills, and community engagement—inspired by CRC 54 Articles.",
 };
 
 export default function RootLayout({

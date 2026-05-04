@@ -11,7 +11,7 @@ export const HOME_COPY = {
 
     whatWeOffer: 'What Club 54 is',
     whatWeOfferSub:
-      'A community café, collaborative workspace, and youth learning environment—inspired by Article 54 of the UN Convention on the Rights of the Child (CRC), on access to information, opportunity, and support for children’s development.',
+      'A community café, collaborative workspace, and youth learning environment—inspired by 54 Articles of the UN Convention on the Rights of the Child (CRC), on access to information, opportunity, and support for children’s development.',
 
     premiumCoffee: 'Community café & coffee culture',
     premiumCoffeeDesc:

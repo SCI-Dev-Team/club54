@@ -10,7 +10,7 @@ export const COMMUNITY_COPY = {
     joinTitleBefore: 'About ',
     joinTitleAccent: 'Club 54',
     overviewP1:
-      'The name Club 54 is inspired by Article 54 of the UN Convention on the Rights of the Child (CRC), which highlights society’s responsibility to ensure children have access to information, opportunity, and support for their development.',
+      'The name Club 54 is inspired by 54 Articles of the UN Convention on the Rights of the Child (CRC), which highlights society’s responsibility to ensure children have access to information, opportunity, and support for their development.',
     overviewP2:
       'Club 54 combines a community café, collaborative workspace, and youth learning environment so young people have a safe, inspiring place to develop ideas, learn practical skills, and connect with mentors and partners.',
     becomeMember: 'Contact for alignment',
