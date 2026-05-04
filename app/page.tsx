@@ -48,7 +48,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
               <div>
-                <h1 className="mb-6 text-5xl font-bold uppercase leading-tight tracking-wide md:text-7xl">
+                <h1 className="mb-6 text-5xl font-bold uppercase leading-tight tracking-wide md:text-6xl">
                   {t.heroTitleBefore} <span className="text-red">{t.heroTitleAccent}</span>
                 </h1>
                 <p className="mb-8 text-xl leading-relaxed text-white/80 md:text-2xl">{t.heroSubtitle}</p>
