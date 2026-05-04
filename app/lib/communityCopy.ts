@@ -1,224 +1,189 @@
 /** Community page copy for `useSiteLanguage()`. */
 export const COMMUNITY_COPY = {
   en: {
-    heroEyebrow: 'NGO café · community',
-    heroTitleBefore: 'Our ',
-    heroTitleAccent: 'community',
+    heroEyebrow: 'Working concept · Confidential',
+    heroTitleBefore: 'Club 54 · ',
+    heroTitleAccent: 'overview',
     heroBody:
-      'Club54 is a welcoming place to meet, share a meal, and take part in programmes that support our non-profit mission—neighbours, partners, and regulars together in one space.',
+      'For communication and CSR alignment only. Club 54 is a social innovation café and collaborative space empowering children and youth—particularly from marginalized communities—through creativity, skills development, and community engagement.',
 
-    joinTitleBefore: 'Join our ',
-    joinTitleAccent: 'community',
+    joinTitleBefore: 'About ',
+    joinTitleAccent: 'Club 54',
     overviewP1:
-      'We bring together locals, volunteers, small teams, and partner organisations around good coffee, shared meals, and honest conversation—not a gym or corporate campus, but a human-scale hub rooted in what our NGO stands for.',
+      'The name Club 54 is inspired by Article 54 of the UN Convention on the Rights of the Child (CRC), which highlights society’s responsibility to ensure children have access to information, opportunity, and support for their development.',
     overviewP2:
-      'Through café hours, room bookings, and community events, we make space for connection, learning, and collaboration.',
-    becomeMember: 'Become a member',
+      'Club 54 combines a community café, collaborative workspace, and youth learning environment so young people have a safe, inspiring place to develop ideas, learn practical skills, and connect with mentors and partners.',
+    becomeMember: 'Contact for alignment',
 
-    statMembers: 'Members',
-    statEventsPerYear: 'Events / year',
-    statPartners: 'Partners & groups',
-    statWays: 'Ways to take part',
+    impactAreas: [
+      {
+        title: 'Youth skills & mentorship',
+        body: 'Practical learning pathways with guidance from mentors and partners.',
+      },
+      {
+        title: 'Inclusive training',
+        body: 'Opportunities designed to reach marginalized groups with dignity and access.',
+      },
+      {
+        title: 'Community engagement',
+        body: 'Learning and creativity as bridges between youth and the wider community.',
+      },
+      {
+        title: 'Responsible coffee culture',
+        body: 'Sustainable, values-aligned café activity that supports the broader mission.',
+      },
+    ],
 
-    programsTitle: 'Community programmes',
-    programsSub: 'Regular rhythms designed for connection—around the café and our booked rooms.',
-
+    programsTitle: 'Purpose',
+    programsSub:
+      'Club 54 aims to create an inclusive ecosystem where youth, professionals, and community partners collaborate while supporting youth development through real-world learning opportunities.',
     programCards: [
       {
-        title: 'Networking mixers',
-        body: 'Evening socials where guests connect over food and drinks in a relaxed, café-style setting.',
-        when: 'Every last Thursday',
+        title: 'Youth ideation & creative projects',
+        body: 'Space and rhythm for young people to explore ideas and build creative confidence.',
+        when: 'Core programming pillar',
       },
       {
-        title: 'Workshops & talks',
-        body: 'Practical sessions on topics that matter to our community—often led by members or local partners.',
-        when: 'Bi-weekly sessions',
+        title: 'Training & mentorship',
+        body: 'Skills-building sessions and mentor connections grounded in lived practice.',
+        when: 'Core programming pillar',
       },
       {
-        title: 'Lunch & learns',
-        body: 'Midday conversations over lunch: short talks, Q&As, and skill shares in our meeting space.',
-        when: 'Weekly Wednesdays',
+        title: 'Community events & social innovation',
+        body: 'Public-facing initiatives that invite collaboration and shared learning.',
+        when: 'Core programming pillar',
       },
       {
-        title: 'Café socials',
-        body: 'Informal get-togethers after hours—music, conversation, and a chance to meet new people.',
-        when: 'First Friday monthly',
-      },
-      {
-        title: 'Member showcases',
-        body: 'A slot to share your project, cause, or small business with others who want to cheer you on.',
-        when: 'Monthly presentations',
-      },
-      {
-        title: 'Community drives',
-        body: 'Fundraisers, donation days, and volunteer meetups aligned with our NGO mission.',
-        when: 'Seasonal & as announced',
+        title: 'Coffee culture & engagement',
+        body: 'Social enterprise activity that keeps the doors open while strengthening community ties.',
+        when: 'Core programming pillar',
       },
     ],
 
-    spaceTitle: 'The space',
-    spaceSub:
-      'Café, bookable rooms, and corners to gather—everything in line with how we operate as an NGO-led venue.',
-
-    cafeBlockTitle: 'Café & lounge',
-    cafeBlockBody:
-      'Coffee, simple food, and seating for casual meetings, quiet work, or time with friends—all income supports our wider mission where applicable.',
-    cafeBullets: ['Espresso & brewed drinks', 'Breakfast & lunch options', 'Snacks & drinks through the day'],
-
-    roomsBlockTitle: 'Rooms & bookings',
-    roomsBlockBody:
-      'Book a room for meetings, workshops, or small events—set up with basics like seating, screen, and Wi‑Fi when arranged in advance.',
-    roomsBullets: ['Half-day & full-day slots', 'Non-profit & partner rates on request', 'Café catering add-ons'],
-
-    partnersBlockTitle: 'Partners & pop-ups',
-    partnersBlockBody:
-      'Local makers, causes, and collaborators sometimes use our space for pop-ups, stalls, or short residencies that fit our values.',
-    partnersBullets: ['Community markets & fairs', 'Local artisan goods', 'Shared noticeboard & bulletin'],
-
-    calmBlockTitle: 'Calm corners',
-    calmBlockBody:
-      'Comfortable seating, natural light where we have it, and a pace that suits reading, chatting, or taking a breath between meetings—not a fitness floor or loud nightlife venue.',
-    calmBullets: ['Outdoor or terrace seating when available', 'Quieter zones for focus', 'Family-friendly welcome'],
-
-    testimonialsTitle: 'What people say',
-    testimonialsSub: 'Voices from our café and community.',
-
-    testimonials: [
-      {
-        quote:
-          '"Club54 feels like a real neighbourhood spot. I have met partners for our project over coffee and stayed for a community talk."',
-        name: 'Sarah Chen',
-        role: 'Local organiser',
-      },
-      {
-        quote:
-          '"We book the room for team days and use the café for breaks. It is simple, warm, and aligned with values we care about."',
-        name: 'Marcus Johnson',
-        role: 'Small non-profit lead',
-      },
-      {
-        quote:
-          '"The mix of café, events, and regular faces makes it easy to show up. It is more than a workspace—it is a community."',
-        name: 'Elena Rodriguez',
-        role: 'Volunteer & regular',
-      },
+    partnershipTitle: 'Partnership opportunities',
+    partnershipSub:
+      'Club 54 seeks partners who share values related to youth empowerment, sustainability, and community development.',
+    partnershipBullets: [
+      'Skills development and training initiatives',
+      'Community events and public engagement',
+      'Social impact storytelling and communication campaigns',
+      'Responsible product or program collaborations aligned with shared values',
     ],
 
-    ctaTitleBefore: 'Join our ',
-    ctaTitleAccent: 'community',
+    communicationTitle: 'Communication & media collaboration',
+    communicationSub: 'The communication and media team will support:',
+    communicationBullets: [
+      'Developing the Club 54 brand identity and narrative',
+      'Highlighting the social impact and youth empowerment story',
+      'Supporting co-branded campaigns and public engagement activities',
+      'Producing communication materials for partners and public outreach',
+    ],
+
+    ipTitle: 'Intellectual ownership & use of this overview',
+    ipLead:
+      'The Club 54 concept, framework, and program design are developed and owned by the Club 54 founding team.',
+    ipClosing:
+      'This overview is shared for communication and CSR alignment purposes only and does not constitute authorization to reproduce, replicate, or implement the concept without written agreement.',
+    operationalNote:
+      'Further operational details will be shared in subsequent collaboration stages as the project develops.',
+
+    ctaTitleBefore: 'Explore ',
+    ctaTitleAccent: 'alignment',
     ctaSub:
-      'Drop by the café, ask about room bookings, or tell us how you would like to get involved.',
-    ctaButton: 'Get started today',
+      'If your organization shares these values, we welcome a conversation about partnership and communication next steps.',
+    ctaButton: 'Get in touch',
   },
   km: {
-    heroEyebrow: 'កាហ្វេអង្គការមិនរកប្រាក់ចំណេញ · សហគមន៍',
-    heroTitleBefore: 'របស់យើង ',
-    heroTitleAccent: 'សហគមន៍',
+    heroEyebrow: 'គំនិតការងារ · សម្ងាត់',
+    heroTitleBefore: 'Club 54 · ',
+    heroTitleAccent: 'សង្ខេប',
     heroBody:
-      'Club54 ជាទីកន្លែងស្វាគមន៍សម្រាប់ជួបជុំ ចែករំលែកអាហារ និងចូលរួមកម្មវិធីដែលគាំទ្របេសកកម្មមិនរកប្រាក់ចំណេញរបស់យើង—អ្នកជិតខាង ដៃគូ និងអ្នកញឹកញាប់រួមគ្នានៅក្នុងទីកន្លែងតែមួយ។',
+      'សម្រាប់ទំនាក់ទំនង និងការសម្រប CSR ប៉ុណ្ណោះ។ Club 54 ជាកាហ្វេនវានុវត្តន៍សង្គម និងកន្លែងសហការដែលពង្រឹងកុមារ និងយុវជន—ជាពិសេសពីសហគមន៍ងាយរងគ្រោះ—តាមរយៈភាពច្នៃប្រឌិត ការអភិវឌ្ឍន៍ជំនាញ និងការចូលរួមសហគមន៍។',
 
-    joinTitleBefore: 'ចូលរួម ',
-    joinTitleAccent: 'សហគមន៍យើង',
+    joinTitleBefore: 'អំពី ',
+    joinTitleAccent: 'Club 54',
     overviewP1:
-      'យើងប្រមូលផ្តុំមនុស្សក្នុងតំបន់ ស្ម័គ្រចិត្ត ក្រុមតូចៗ និងអង្គការដៃគូ ជុំវិញកាហ្វេល្អ អាហាររួម និងការសន្ទនាស្មោះត្រង់—មិនមែនជាកន្លែងកីឡាឬការិយាល័យធំទេ ប៉ុន្តែជាកណ្តាលទីប្រមូលផ្តុំមនុស្សដែលឿងពីអ្វីដែលអង្គការមិនរកប្រាក់ចំណេញរបស់យើងឈរលើ។',
+      'ឈ្មោះ Club 54 បានតំរូវពីមាត្រា ៥៤ នៃអនុសញ្ញាសិទ្ធិកុមាររបស់អង្គការសហប្រជាជាតិ (CRC) ដែលសង្កត់ធ្ងន់លើការទទួលខុសត្រូវរបស់សង្គមក្នុងការធានាថាកុមារមានចូលដំណើរការព័ត៌មាន ឱកាស និងការគាំទ្រការអភិវឌ្ឍន៍។',
     overviewP2:
-      'តាមរយៈម៉ោងកាហ្វេ ការកក់បន្ទប់ និងព្រឹត្តិការណ៍សហគមន៍ យើងបង្កើតទីកន្លែងសម្រាប់ការតភ្ជាប់ ការរៀន និងការសហការ។',
-    becomeMember: 'ក្លាយជាសមាជិក',
+      'Club 54 រួមបញ្ចូលកាហ្វេសហគមន៍ កន្លែងសហការ និងបរិយាកាសរៀនសូត្ររបស់យុវជន ដើម្បីផ្តល់កន្លែងសុវត្ថិភាព និងលើកទឹកចិត្តដែលយុវជនអាចអភិវឌ្ឍគំនិត រៀនជំនាញជាក់ស្តែង និងតភ្ជាប់ជាមួយអ្នកណែនាំ និងដៃគូ។',
+    becomeMember: 'ទាក់ទងសម្រាប់ការសម្រប',
 
-    statMembers: 'សមាជិក',
-    statEventsPerYear: 'ព្រឹត្តិការណ៍ / ឆ្នាំ',
-    statPartners: 'ដៃគូ និងក្រុម',
-    statWays: 'របៀបចូលរួម',
+    impactAreas: [
+      {
+        title: 'ជំនាញ និងការណែនាំយុវជន',
+        body: 'ផ្លូវរៀនប្រកបដោយអនុវត្តជាមួយអ្នកណែនាំ និងដៃគូ។',
+      },
+      {
+        title: 'ការបណ្តុះបណ្តាលរួមបញ្ចូល',
+        body: 'ឱកាសដែលបង្កើតសម្រាប់ក្រុមងាយរងគ្រោះដោយមានកិត្តិយស និងចូលដំណើរការ។',
+      },
+      {
+        title: 'ការចូលរួមសហគមន៍',
+        body: 'ការរៀន និងភាពច្នៃប្រឌិតជាស្ពានរវាងយុវជន និងសហគមន៍ធំ។',
+      },
+      {
+        title: 'វប្បធម៌កាហ្វេទទួលខុសត្រូវ',
+        body: 'សកម្មភាពកាហ្វេនិរន្តរភាព និងតម្លៃដែលគាំទ្របេសកកម្មរួម។',
+      },
+    ],
 
-    programsTitle: 'កម្មវិធីសហគមន៍',
+    programsTitle: 'គោលបំណង',
     programsSub:
-      'ចរន្តទៀងទាត់សម្រាប់ការតភ្ជាប់—ជុំវិញកាហ្វេ និងបន្ទប់ដែលបានកក់។',
-
+      'Club 54 មានគោលបំណងបង្កើតប្រព័ន្ធរួមបញ្ចូលដែលយុវជន អាជីវកម្ម និងដៃគូសហគមន៍សហការរួមគ្នា ខណៈពេលគាំទ្រការអភិវឌ្ឍន៍យុវជនតាមរយៈឱកាសរៀននៅក្នុងពិភពពិត។',
     programCards: [
       {
-        title: 'ពិសេសជួបជុំសង្គម',
-        body: 'ពិសេសយប់ដែលភ្ញៀវជួបគ្នាជុំវិញអាហារ និងភេសជ្ជៈក្នុងបរិយាកាសស្ងប់រមូលដូចកាហ្វេ។',
-        when: 'ថ្ងៃព្រហស្បតិ៍ចុងក្រោយរៀងរាល់ខែ',
+        title: 'ការរកឃើញគំនិត និងគម្រោងច្នៃប្រឌិតរបស់យុវជន',
+        body: 'ទីកន្លែង និងចង្វាក់សម្រាប់យុវជនស្វែងរកគំនិត និងបង្កើតទំនុកចិត្តច្នៃប្រឌិត។',
+        when: 'សសរស្តម្ភកម្មវិធីសំខាន់',
       },
       {
-        title: 'សិក្ខាសាលា និងការនិយាយ',
-        body: 'វគ្គអនុវត្តលើប្រធានបទសំខាន់សម្រាប់សហគមន៍យើង—ញឹកញយដោយសមាជិក ឬដៃគូក្នុងតំបន់។',
-        when: 'រៀងរាល់ពីរសប្តាហ៍',
+        title: 'ការបណ្តុះបណ្តាល និងការណែនាំ',
+        body: 'វគ្គបង្កើតជំនាញ និងការតភ្ជាប់អ្នកណែនាំដែលផ្អែកលើបទពិសោធពិត។',
+        when: 'សសរស្តម្ភកម្មវិធីសំខាន់',
       },
       {
-        title: 'រៀនពេលថ្ងៃត្រង់',
-        body: 'ការសន្ទនាពេលថ្ងៃត្រង់ជាមួយអាហារថ្ងៃត្រង់៖ ការនិយាយខ្លី សំណួរ-ចម្លើយ និងចែករំលែកជំនាញនៅក្នុងបន្ទប់ប្រជុំរបស់យើង។',
-        when: 'រៀងរាល់ថ្ងៃពុធ',
+        title: 'ព្រឹត្តិការណ៍សហគមន៍ និងនវានុវត្តន៍សង្គម',
+        body: 'ផែនការសាធារណៈដែលអញ្ជើញសហការ និងការរៀនរួមគ្នា។',
+        when: 'សសរស្តម្ភកម្មវិធីសំខាន់',
       },
       {
-        title: 'សង្គមកាហ្វេ',
-        body: 'ការជួបជុំរដូវក្រោយម៉ោងធ្វើការ—តន្ត្រី សន្ទនា និងឱកាសស្គាល់មនុស្សថ្មី។',
-        when: 'ថ្ងៃសុក្រទីមួយរៀងរាល់ខែ',
-      },
-      {
-        title: 'បង្ហាញសមាជិក',
-        body: 'ពេលវេលាចែករំលែកគម្រោង រឿង ឬអាជីវកម្មតូចរបស់អ្នកជាមួយអ្នកដែលចង់លើកទឹកចិត្តអ្នក។',
-        when: 'ការបង្ហាញរៀងរាល់ខែ',
-      },
-      {
-        title: 'យុទ្ធនាការសហគមន៍',
-        body: 'ការរៃអង្គាសប្រាក់ ថ្ងៃបរិច្ឆេទ និងការជួបស្ម័គ្រចិត្តដែលស្របនឹងបេសកកម្មអង្គការមិនរកប្រាក់ចំណេញរបស់យើង។',
-        when: 'តាមរដូវ និងតាមការប្រកាស',
+        title: 'វប្បធម៌កាហ្វេ និងការចូលរួម',
+        body: 'សកម្មភាពសហគមន៍សេដ្ឋកិច្ចរក្សាទ្វារបើក ខណៈពេលពង្រឹងសហគមន៍។',
+        when: 'សសរស្តម្ភកម្មវិធីសំខាន់',
       },
     ],
 
-    spaceTitle: 'កន្លែង',
-    spaceSub:
-      'កាហ្វេ បន្ទប់អាចកក់ និងជ្រុងជួបជុំ—ស្របនឹងរបៀបដែលយើងដំណើរការជាទីកន្លែងដឹកនាំដោយអង្គការមិនរកប្រាក់ចំណេញ។',
-
-    cafeBlockTitle: 'កាហ្វេ និងទីសម្រាក',
-    cafeBlockBody:
-      'កាហ្វេ អាហារសាមញ្ញ និងកៅអីសម្រាប់ប្រជុំស្រាល ការងារស្ងប់ៗ ឬពេលជាមួយមិត្តភក្តិ—ចំណូលគាំទ្របេសកកម្មទូទៅរបស់យើងពេលអាចធ្វើបាន។',
-    cafeBullets: ['អេស្ព្រេសសូ និងកាហ្វេឆុង', 'អាហារពេលព្រឹក និងថ្ងៃត្រង់', 'អាហារស្រាល និងភេសជ្ជៈពេញមួយថ្ងៃ'],
-
-    roomsBlockTitle: 'បន្ទប់ និងការកក់',
-    roomsBlockBody:
-      'កក់បន្ទប់សម្រាប់ប្រជុំ សិក្ខាសាលា ឬព្រឹត្តិការណ៍តូចៗ—រៀបចំមូលដ្ឋានដូចជាកៅអី អេក្រង់ និង Wi‑Fi ប្រសិនបើរៀបចំមុន។',
-    roomsBullets: ['កន្លះថ្ងៃ និងពេញមួយថ្ងៃ', 'តម្លៃអង្គការមិនរកប្រាក់ចំណេញ និងដៃគូតាមសំណើ', 'បន្ថែមការបម្រើអាហារកាហ្វេ'],
-
-    partnersBlockTitle: 'ដៃគូ និងតូចៗ',
-    partnersBlockBody:
-      'អ្នកផលិត រឿង និងអ្នកសហការក្នុងតំបន់ពេលខ្លះប្រើកន្លែងយើងសម្រាប់តូចៗ ស្តង់ដែល ឬការស្នាក់ខ្លីដែលសាកសមនឹងតម្លៃរបស់យើង។',
-    partnersBullets: ['ផ្សារសហគមន៍ និងពិធី', 'ផលិតផលសិប្បករក្នុងស្រុក', 'ក្តារព័ត៌មានរួម'],
-
-    calmBlockTitle: 'ជ្រុងស្ងប់',
-    calmBlockBody:
-      'កៅអីស្រួល ពន្លឺធម្មជាតិពេលមាន និងល្បឿនសមស្របសម្រាប់អាន សន្ទនា ឬសម្រាកចន្លោះប្រជុំ—មិនមែនជាកន្លែងកីឡាឬកន្លែងកម្សាន្តសំឡេងខ្លាំង។',
-    calmBullets: ['កៅអីក្រៅឬដំណើរលើដំបូលប្រសិនបើមាន', 'តំបន់ស្ងប់សម្រាប់ផ្តោត', 'ស្វាគមន៍គ្រួសារ'],
-
-    testimonialsTitle: 'អ្វីដែលមនុស្សនិយាយ',
-    testimonialsSub: 'សំឡេងពីកាហ្វេ និងសហគមន៍របស់យើង។',
-
-    testimonials: [
-      {
-        quote:
-          '"Club54 មានអារម្មណ៍ដូចទីកន្លែងជិតខាងពិតប្រាកដ។ ខ្ញុំបានជួបដៃគូសម្រាប់គម្រោងយើងលើកាហ្វេ និងនៅសម្រាប់ការនិយាយសហគមន៍។"',
-        name: 'Sarah Chen',
-        role: 'អ្នករៀបចំក្នុងតំបន់',
-      },
-      {
-        quote:
-          '"យើងកក់បន្ទប់សម្រាប់ថ្ងៃក្រុម និងប្រើកាហ្វេសម្រាប់សម្រាក។ វាសាមញ្ញ កក់ក្តៅ និងស្របនឹងតម្លៃដែលយើងខ្នាត។"',
-        name: 'Marcus Johnson',
-        role: 'អ្នកដឹកនាំអង្គការមិនរកប្រាក់ចំណេញតូច',
-      },
-      {
-        quote:
-          '"ការលាយបញ្ចូលកាហ្វេ ព្រឹត្តិការណ៍ និងមុខស្គាល់ញឹកញយធ្វើឱ្យងាយមកចូលរួម។ វាលើសពីកន្លែងធ្វើការ—វាជាសហគមន៍។"',
-        name: 'Elena Rodriguez',
-        role: 'ស្ម័គ្រចិត្ត និងអ្នកញឹកញយ',
-      },
+    partnershipTitle: 'ឱកាសភាពជាដៃគូ',
+    partnershipSub:
+      'Club 54 ស្វែងរកដៃគូដែលចែករំលែកតម្លៃជុំវិញការពង្រឹងយុវជន ភាពនិរន្តរភាព និងការអភិវឌ្ឍសហគមន៍។',
+    partnershipBullets: [
+      'កម្មវិធីអភិវឌ្ឍន៍ជំនាញ និងការបណ្តុះបណ្តាល',
+      'ព្រឹត្តិការណ៍សហគមន៍ និងការចូលរួមសាធារណៈ',
+      'ការនិយាយរឿងផលប៉ះពាល់សង្គម និងយុទ្ធនាការទំនាក់ទំនង',
+      'ការសហការផលិតផល ឬកម្មវិធីទទួលខុសត្រូវដែលស្របតម្លៃរួម',
     ],
 
-    ctaTitleBefore: 'ចូលរួម ',
-    ctaTitleAccent: 'សហគមន៍យើង',
+    communicationTitle: 'ការសហការទំនាក់ទំនង និងប្រព័ន្ធផ្សព្វផ្សាយ',
+    communicationSub: 'ក្រុមទំនាក់ទំនង និងប្រព័ន្ធផ្សព្វផ្សាយនឹងគាំទ្រ៖',
+    communicationBullets: [
+      'ការអភិវឌ្ឍអត្តសញ្ញាណ និងរឿងរ៉ាវម៉ាក Club 54',
+      'លេចធ្វើឱ្យមានរឿងផលប៉ះពាល់សង្គម និងការពង្រឹងយុវជន',
+      'គាំទ្រយុទ្ធនាការរួមម៉ាក និងសកម្មភាពចូលរួមសាធារណៈ',
+      'ផលិតសម្ភារៈទំនាក់ទំនងសម្រាប់ដៃគូ និងការទំនាក់ទំនងសាធារណៈ',
+    ],
+
+    ipTitle: 'ម្ចាស់កម្មសិទ្ធិប្រាជ្ញា និងការប្រើប្រាស់សង្ខេបនេះ',
+    ipLead:
+      'គំនិត រចនាសម្ព័ន្ធ និងការរចនាកម្មវិធី Club 54 ត្រូវបានអភិវឌ្ឍ និងជាកម្មសិទ្ធរបស់ក្រុមបង្កើត Club 54។',
+    ipClosing:
+      'សង្ខេបនេះត្រូវបានចែករំលែកសម្រាប់ទំនាក់ទំនង និងការសម្រប CSR ប៉ុណ្ណោះ ហើយមិនមានន័យថាបានអនុញ្ញាតឱ្យចម្លង ធ្វើម្តងទៀត ឬអនុវត្តគំនិតដោយគ្មានកិច្ចព្រមព្រៀងលីខិត។',
+    operationalNote:
+      'ព័ត៌មានប្រតិបត្តិការបន្ថែមនឹងត្រូវបានចែករំលែកនៅដំណាក់ការសហការបន្ទាប់ ពេលគម្រោងរីកចម្រើន។',
+
+    ctaTitleBefore: 'ស្វែងរក ',
+    ctaTitleAccent: 'ការសម្រប',
     ctaSub:
-      'ឆ្លងកាត់កាហ្វេ សួរអំពីការកក់បន្ទប់ ឬប្រាប់យើងពីរបៀបដែលអ្នកចង់ចូលរួម។',
-    ctaButton: 'ចាប់ផ្តើមថ្ងៃនេះ',
+      'ប្រសិនបើអង្គការរបស់អ្នកចែករំលែកតម្លៃទាំងនេះ យើងស្វាគមន៍ការសន្ទនាអំពីជំហានបន្ទាប់នៃភាពជាដៃគូ និងទំនាក់ទំនង។',
+    ctaButton: 'ទាក់ទង',
   },
 } as const;

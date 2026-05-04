@@ -60,7 +60,7 @@ export default function Home() {
                     {t.visitUsToday}
                   </Link>
                   <Link
-                    href="#menu"
+                    href="#overview"
                     className="rounded-lg border border-white/30 bg-white/10 px-8 py-4 text-center text-lg font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition-all hover:bg-white hover:text-black"
                   >
                     {t.viewMenu}
@@ -85,7 +85,7 @@ export default function Home() {
         </section>
 
         {/* Features Overview */}
-        <section id="menu" className="bg-white py-20">
+        <section id="overview" className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-16 text-center">
               <h2 className="mb-4 text-4xl font-bold uppercase tracking-wide text-black md:text-5xl">
@@ -102,7 +102,7 @@ export default function Home() {
                 <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.premiumCoffee}</h3>
                 <p className="mb-6 leading-relaxed text-black/80">{t.premiumCoffeeDesc}</p>
                 <Link
-                  href="/#menu"
+                  href="/#overview"
                   className="inline-flex items-center font-semibold uppercase tracking-wide text-red transition-colors hover:text-black"
                 >
                   {t.viewFullMenu}
@@ -117,7 +117,7 @@ export default function Home() {
                 <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.freshFood}</h3>
                 <p className="mb-6 leading-relaxed text-black/80">{t.freshFoodDesc}</p>
                 <Link
-                  href="/#menu"
+                  href="/#overview"
                   className="inline-flex items-center font-semibold uppercase tracking-wide text-red transition-colors hover:text-black"
                 >
                   {t.seeMenu}

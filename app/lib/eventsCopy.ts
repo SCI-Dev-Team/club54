@@ -1,10 +1,10 @@
 /** Events page copy for `useSiteLanguage()`. */
 export const EVENTS_COPY = {
   en: {
-    heroEyebrow: 'Community space · NGO café',
-    heroTitle: 'Gather at our café & book a room',
+    heroEyebrow: 'Youth · community · collaboration',
+    heroTitle: 'Events, learning & social innovation',
     heroBody:
-      'Our café is part of a non-profit mission: a calm, welcoming place to meet, share a meal, and host small gatherings. Reserve a room for meetings and workshops, or use the café for community events that fit what we do here—nothing like a gym or fitness venue, just people-focused spaces.',
+      'Club 54 hosts youth ideation and creative projects, training and mentorship, community events and social innovation initiatives, and coffee culture activities that strengthen engagement. Programming evolves as partnerships deepen—this page reflects the concept direction and any live listings below.',
 
     hostTitle: 'What works well here',
     hostSub:
@@ -34,68 +34,68 @@ export const EVENTS_COPY = {
       'Partnerships that support our NGO purpose',
     ],
 
-    spaceTitle: 'The space & what we offer',
+    spaceTitle: 'Space & guest experience',
 
     features: [
       {
-        title: 'Café & refreshments',
-        description: 'Drinks and simple food service for guests during your visit or event.',
+        title: 'Youth-centered programming',
+        description: 'Sessions designed for ideation, creativity, and practical skills alongside mentors.',
       },
       {
-        title: 'Rooms to book',
+        title: 'Bookable areas',
         description:
-          'Separate rooms for focused work or private conversations—tell us your group size.',
+          'Flexible setups for trainings, workshops, and partner meetings—scaled to group size and intent.',
       },
       {
-        title: 'Flexible layout',
-        description: 'Tables and seating we can adjust for discussion, presentation, or mingling.',
+        title: 'Collaborative layout',
+        description: 'Seating and flow that support dialogue, co-design, and peer learning.',
       },
       {
-        title: 'Basic AV',
-        description: 'Screen or projector and sound for talks and workshops when arranged in advance.',
+        title: 'Storytelling-ready basics',
+        description: 'Simple AV for talks and showcases when arranged with the communications team.',
       },
       {
-        title: 'Calm atmosphere',
-        description: 'Warm lighting and a human-scale space—built for conversation, not a loud venue.',
+        title: 'Welcoming atmosphere',
+        description: 'A calm, dignified environment aligned with inclusive youth development.',
       },
       {
-        title: 'Wi-Fi & power',
-        description: 'Reliable connectivity for hybrid meetings and note-taking.',
+        title: 'Connectivity',
+        description: 'Reliable Wi‑Fi for hybrid sessions, documentation, and learning tools.',
       },
       {
-        title: 'Support on site',
-        description: 'Staff to help with setup basics and café orders during your booking.',
+        title: 'Staff coordination',
+        description: 'On-site support aligned with café service and scheduled programming.',
       },
       {
-        title: 'Modest capacity',
-        description: 'Suited to small and medium groups—share your numbers and we’ll suggest a setup.',
+        title: 'Right-sized gatherings',
+        description: 'Suited to intimate and medium groups—details confirmed as the project matures.',
       },
     ] as const,
 
-    inquiryTitle: 'Plan a visit or a booking',
+    inquiryTitle: 'Plan collaboration or a visit',
     inquirySub:
-      'Tell us about your café idea, room needs, or community event—we’ll reply with what’s possible.',
-    inquiryFormTitle: 'Café & room inquiry',
+      'Share your CSR alignment question, partnership idea, or event concept—our team will respond with appropriate next steps.',
+    inquiryFormTitle: 'Events & collaboration inquiry',
 
     eventsScheduleTitle: 'Upcoming events',
-    eventsScheduleSub: 'Workshops, trainings, and gatherings from our calendar.',
+    eventsScheduleSub: 'Scheduled workshops, trainings, and gatherings when published.',
     eventsLoading: 'Loading events…',
     eventsEmpty: 'No events listed for this language yet. Check back soon.',
     eventsError: 'Could not load events. Please try again later.',
     eventsFirebaseMissing:
       'Live events are not loading because Firebase environment variables are missing on this deployment. In Vercel: Project → Settings → Environment Variables, add every NEXT_PUBLIC_FIREBASE_* value from your Firebase web app config, apply to Production, then redeploy.',
 
-    eventsSpotlightTitle: 'Spotlight & seats',
-    eventsSpotlightSub: 'Quick highlights with dates and availability.',
+    eventsSpotlightTitle: 'Spotlight',
+    eventsSpotlightSub: 'Highlighted moments and availability when shared publicly.',
     eventsSpotlightLoading: 'Loading spotlight…',
     eventsSpotlightEmpty: 'No spotlight items for this language yet.',
     eventsSpotlightError: 'Could not load spotlight items.',
   },
   km: {
-    heroEyebrow: 'កន្លែងសហគមន៍ · កាហ្វេអង្គការមិនរកប្រាក់ចំណេញ',
-    heroTitle: 'ជួបគ្នានៅកាហ្វេយើង និងកក់បន្ទប់',
+    heroEyebrow: 'យុវជន · សហគមន៍ · សហការ',
+    heroTitle: 'ព្រឹត្តិការណ៍ ការរៀន និងនវានុវត្តន៍សង្គម',
     heroBody:
-      'កាហ្វេរបស់យើងជាផ្នែកនៃបេសកកម្មមិនរកប្រាក់ចំណេញ៖ ទីកន្លែងស្ងប់ ស្វាគមន៍ សម្រាប់ជួបជុំ ចែករំលែកអាហារ និងរៀបចំការជួបជុំតូចៗ។ កក់បន្ទប់សម្រាប់ប្រជុំ និងសិក្ខាសាលា ឬប្រើកាហ្វេសម្រាប់ព្រឹត្តិការណ៍សហគមន៍ដែលសាកសមនឹងអ្វីដែលយើងធ្វើនៅទីនេះ—មិនមែនជាកន្លែងកីឡាឬសាលហាត់ប្រាកដទេ គ្រាន់តែទីកន្លែងសម្រាប់មនុស្ស។',
+      'Club 54 រៀបចំការរកឃើញគំនិត និងគម្រោងច្នៃប្រឌិតរបស់យុវជន ការបណ្តុះបណ្តាល និងការណែនាំ ព្រឹត្តិការណ៍សហគមន៍ និងផែនការនវានុវត្តន៍សង្គម រួមទាំងសកម្មភាពវប្បធម៌កាហ្វេដែលពង្រឹងការចូលរួម។ កម្មវិធីរីកចម្រើនតាមភាពជាដៃគូ—ទំព័រនេះបង្ហាញទិសដៅគំនិត និងបញ្ជីផ្ទាល់ខាងក្រោមប្រសិនបើមាន។',
 
     hostTitle: 'អ្វីដែលសាកសមនៅទីនេះ',
     hostSub:
@@ -125,60 +125,59 @@ export const EVENTS_COPY = {
       'ភាពជាដៃគូដែលគាំទ្រគោលបំណងអង្គការមិនរកប្រាក់ចំណេញរបស់យើង',
     ],
 
-    spaceTitle: 'កន្លែង និងអ្វីដែលយើងមាន',
+    spaceTitle: 'កន្លែង និងបទពិសោធភ្ញៀវ',
 
     features: [
       {
-        title: 'កាហ្វេ និងភេសជ្ជៈ',
-        description: 'ភេសជ្ជៈ និងអាហារសាមញ្ញសម្រាប់ភ្ញៀវកំឡុងពេលទស្សនា ឬព្រឹត្តិការណ៍។',
+        title: 'កម្មវិធីមានកុមារនៅកណ្តាល',
+        description: 'វគ្គរចនាសម្រាប់ការរកឃើញគំនិត ភាពច្នៃប្រឌិត និងជំនាញជាក់ស្តែងជាមួយអ្នកណែនាំ។',
       },
       {
-        title: 'បន្ទប់សម្រាប់កក់',
+        title: 'តំបន់អាចកក់',
         description:
-          'បន្ទប់ដាច់ដោយឡែកសម្រាប់ការផ្តោតការងារ ឬសន្ទនាឯកជន—ប្រាប់យើងពីចំនួនក្រុមរបស់អ្នក។',
+          'ប្លង់បត់បែនសម្រាប់ការបណ្តុះបណ្តាល សិក្ខាសាលា និងប្រជុំដៃគូ—តាមទំហំក្រុម និងគោលបំណង។',
       },
       {
-        title: 'ប្លង់អាចបត់បែនបាន',
-        description: 'តុ និងកៅអីដែលយើងអាចតម្រូវសម្រាប់ពិភាក្សា បញ្ចេញមតិ ឬចូលរួមសង្គម។',
+        title: 'ប្លង់សហការ',
+        description: 'កៅអី និងលំហូរដែលគាំទ្រសន្ទនា រចនារួម និងការរៀនរវាងមិត្តភក្តិ។',
       },
       {
-        title: 'សំឡេងរូបភាពមូលដ្ឋាន',
-        description: 'អេក្រង់ ឬគំនូរបញ្ចាំង និងសំឡេងសម្រាប់ការនិយាយ និងសិក្ខាសាលា ប្រសិនបើរៀបចំមុន។',
+        title: 'មូលដ្ឋានសម្រាប់បង្ហាញរឿង',
+        description: 'ប្រព័ន្ធ AV សាមញ្ញសម្រាប់ការនិយាយ និងបង្ហាញពេលរៀបចំជាមួយក្រុមទំនាក់ទំនង។',
       },
       {
-        title: 'បរិយាកាសស្ងប់',
-        description: 'ពន្លឺកក់ក្តៅ និងទីកន្លែងមនុស្ស—សម្រាប់សន្ទនា មិនមែនកន្លែងសំឡេងខ្លាំង។',
+        title: 'បរិយាកាសស្វាគមន៍',
+        description: 'បរិយាកាសស្ងប់ មានកិត្តិយស ស្របនឹងការអភិវឌ្ឍន៍យុវជនរួមបញ្ចូល។',
       },
       {
-        title: 'Wi-Fi និងភ្លើង',
-        description: 'ការតភ្ជាប់ដែលទុកចិត្តបានសម្រាប់ប្រជុំចម្រុះ និងកំណត់ចំណាំ។',
+        title: 'ការតភ្ជាប់',
+        description: 'Wi‑Fi ដែលទុកចិត្តបានសម្រាប់សម័យរួម ឯកសារ និងឧបករណ៍រៀន។',
       },
       {
-        title: 'ការគាំទ្រនៅកន្លែង',
-        description:
-          'បុគ្គលិកជួយរៀបចំមូលដ្ឋាន និងការកម្មង់កាហ្វេកំឡុងពេលកក់របស់អ្នក។',
+        title: 'ការសម្របតែមួយជាមួយបុគ្គលិក',
+        description: 'ការគាំទ្រនៅកន្លែងស្របនឹងសេវាកាហ្វេ និងកម្មវិធីរៀបចំ។',
       },
       {
-        title: 'ចំនួនមធ្យម',
-        description: 'សមស្របសម្រាប់ក្រុមតូច និងមធ្យម—ចែករំលែកចំនួន ហើយយើងនឹងផ្តល់យោបល់ប្លង់។',
+        title: 'ការជួបជុំត្រឹមត្រូវទំហំ',
+        description: 'សមស្របសម្រាប់ក្រុមតូច និងមធ្យម—លម្អិតបញ្ជាក់ពេលគម្រោងរីកចម្រើន។',
       },
     ] as const,
 
-    inquiryTitle: 'គ្រោងទស្សនា ឬកក់',
+    inquiryTitle: 'គ្រោងសហការ ឬទស្សនា',
     inquirySub:
-      'ប្រាប់យើងពីគំនិតកាហ្វេ តម្រូវការបន្ទប់ ឬព្រឹត្តិការណ៍សហគមន៍—យើងនឹងឆ្លើយតបអំពីអ្វីដែលអាចធ្វើបាន។',
-    inquiryFormTitle: 'សំណួរកាហ្វេ និងបន្ទប់',
+      'ចែករំលែកសំណួរសម្រប CSR គំនិតភាពជាដៃគូ ឬគំនិតព្រឹត្តិការណ៍—ក្រុមយើងនឹងឆ្លើយតបជាមួយជំហានសមស្រប។',
+    inquiryFormTitle: 'សំណួរព្រឹត្តិការណ៍ និងសហការ',
 
     eventsScheduleTitle: 'ព្រឹត្តិការណ៍នាពេលខាងមុខ',
-    eventsScheduleSub: 'សិក្ខាសាលា ការបណ្តុះបណ្តាល និងការជួបជុំពីប្រតិទិនរបស់យើង។',
+    eventsScheduleSub: 'សិក្ខាសាលា ការបណ្តុះបណ្តាល និងការជួបជុំនៅពេលបានបោះពុម្ព។',
     eventsLoading: 'កំពុងផ្ទុកព្រឹត្តិការណ៍…',
     eventsEmpty: 'មិនទាន់មានព្រឹត្តិការណ៍សម្រាប់ភាសានេះទេ។ សូមត្រឡប់មកមើលពេលក្រោយ។',
     eventsError: 'មិនអាចផ្ទុកព្រឹត្តិការណ៍បានទេ។ សូមព្យាយាមម្តងទៀត។',
     eventsFirebaseMissing:
       'ព្រឹត្តិការណ៍ផ្ទាល់មិនផ្ទុកពី Firebase ទេ ពីព្រោះអាប់ដេតមិនមានអ្វីដែលត្រូវការ។ ក្នុង Vercel បន្ថែម NEXT_PUBLIC_FIREBASE_* ទាំងអស់ ហើយ deploy ឡើងវិញ។',
 
-    eventsSpotlightTitle: 'ពិសេស និងកៅអី',
-    eventsSpotlightSub: 'ព័ត៌មានខ្លី រួមថ្ងៃ និងកន្លែងនៅសល់។',
+    eventsSpotlightTitle: 'ពិសេស',
+    eventsSpotlightSub: 'ពេលវេលាលេចធ្វើជាក់ស្តែង និងកន្លែងនៅសល់នៅពេលបានប្រកាស។',
     eventsSpotlightLoading: 'កំពុងផ្ទុកព័ត៌មានពិសេស…',
     eventsSpotlightEmpty: 'មិនទាន់មានរបស់ពិសេសសម្រាប់ភាសានេះទេ។',
     eventsSpotlightError: 'មិនអាចផ្ទុកព័ត៌មានពិសេសបានទេ។',

@@ -1,15 +1,5 @@
-import {
-  Building2,
-  Check,
-  Clock,
-  MapPin,
-  Puzzle,
-  Settings2,
-  ShieldCheck,
-  User,
-  Users,
-  Wifi,
-} from 'lucide-react';
+import { Building2, Handshake, Shield } from 'lucide-react';
+import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import InquiryForm from '../components/InquiryForm';
@@ -18,222 +8,84 @@ export default function OfficeLeasingPage() {
   return (
     <>
       <Header />
-      
+
       <main>
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-red to-plum text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative bg-gradient-to-br from-red to-plum py-20 text-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-white/80">
+              Partnership & long-term space — concept stage
+            </p>
             <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 uppercase tracking-wide">
-                Office Leasing
-              </h1>
-              <p className="text-xl text-gray-100 leading-relaxed">
-                Professional office spaces designed for growing businesses. From intimate private offices to expansive team suites, find the perfect space for your organization.
+              <h1 className="mb-6 text-5xl font-bold uppercase tracking-wide md:text-6xl">Space partnerships</h1>
+              <p className="text-xl leading-relaxed text-gray-100">
+                Club 54 contemplates durable space arrangements that keep youth programming, mentorship, and café
+                culture connected. Traditional office leasing language does not fully capture the intent; instead,
+                alignments are explored with partners who share youth empowerment, sustainability, and community values.
+                Detailed leasing parameters will emerge through structured collaboration—not through speculative listings.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Office Types */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-black mb-4 uppercase tracking-wide">
-                Choose Your Office Space
-              </h2>
+        <section className="bg-white py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="rounded-xl border border-black/10 bg-biscuit p-8 shadow-sm">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-red text-white">
+                  <Handshake className="h-6 w-6" strokeWidth={2} aria-hidden />
+                </div>
+                <h2 className="mb-3 text-xl font-bold uppercase text-black">Values-first alignment</h2>
+                <p className="text-sm leading-relaxed text-gray-700">
+                  Potential collaborators include mission-aligned enterprises, NGOs, and CSR teams interested in skills,
+                  events, storytelling, or responsible programs—not solely tenant prospecting.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-black/10 bg-biscuit p-8 shadow-sm">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-teal text-white">
+                  <Building2 className="h-6 w-6" strokeWidth={2} aria-hidden />
+                </div>
+                <h2 className="mb-3 text-xl font-bold uppercase text-black">Integrated programming</h2>
+                <p className="text-sm leading-relaxed text-gray-700">
+                  Physical space decisions consider workshop rooms, mentorship touchpoints, youth zones, and café flow.
+                  Requirements are co-developed rather than sold from a static catalog.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-black/10 bg-biscuit p-8 shadow-sm">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-purple text-white">
+                  <Shield className="h-6 w-6" strokeWidth={2} aria-hidden />
+                </div>
+                <h2 className="mb-3 text-xl font-bold uppercase text-black">Confidential framework</h2>
+                <p className="text-sm leading-relaxed text-gray-700">
+                  The Club 54 concept remains owned by the founding team. Discuss how your organization can engage without
+                  assuming authorization to replicate the model without written agreement.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg bg-red px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-black"
+              >
+                Start a conversation
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-black/10 bg-white py-20">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-4xl font-bold uppercase tracking-wide text-black">Partnership inquiry</h2>
               <p className="text-xl text-gray-600">
-                Flexible leasing options tailored to your business needs
+                Outline your goals, timeline, and governance contacts. We will respond with appropriate next steps as the
+                project develops.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              {/* Private Office */}
-              <div className="bg-biscuit rounded-xl p-6 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-red rounded-lg flex items-center justify-center mb-4">
-                  <User className="w-6 h-6 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 uppercase">Private Office</h3>
-                <p className="text-gray-700 mb-4 text-sm">
-                  Individual lockable office space
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    1-3 people
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    24/7 access
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    Furnished
-                  </li>
-                </ul>
-              </div>
-
-              {/* Team Suite */}
-              <div className="bg-biscuit rounded-xl p-6 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-teal rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 uppercase">Team Suite</h3>
-                <p className="text-gray-700 mb-4 text-sm">
-                  Open-plan team workspace
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    5-15 people
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    Collaborative layout
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    Meeting room access
-                  </li>
-                </ul>
-              </div>
-
-              {/* Executive Suite */}
-              <div className="bg-biscuit rounded-xl p-6 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-purple rounded-lg flex items-center justify-center mb-4">
-                  <Building2 className="w-6 h-6 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 uppercase">Executive Suite</h3>
-                <p className="text-gray-700 mb-4 text-sm">
-                  Premium corner office space
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    3-5 people
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    Premium finishes
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    Private reception
-                  </li>
-                </ul>
-              </div>
-
-              {/* Custom Space */}
-              <div className="bg-biscuit rounded-xl p-6 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-mustard rounded-lg flex items-center justify-center mb-4">
-                  <Puzzle className="w-6 h-6 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 uppercase">Custom Space</h3>
-                <p className="text-gray-700 mb-4 text-sm">
-                  Tailored to your specifications
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    15+ people
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    Custom layout
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
-                    Build-to-suit
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Features & Amenities */}
-        <section className="py-20 bg-gradient-to-br from-biscuit/30 to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-black mb-12 text-center uppercase tracking-wide">
-              What's Included
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-red rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Wifi className="w-5 h-5 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <div>
-                  <h3 className="font-bold text-black mb-1">High-Speed Internet</h3>
-                  <p className="text-sm text-gray-600">Enterprise-grade fiber connection</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-teal rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Settings2 className="w-5 h-5 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <div>
-                  <h3 className="font-bold text-black mb-1">Meeting Rooms</h3>
-                  <p className="text-sm text-gray-600">Bookable conference spaces</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-purple rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Building2 className="w-5 h-5 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <div>
-                  <h3 className="font-bold text-black mb-1">Fully Furnished</h3>
-                  <p className="text-sm text-gray-600">Modern ergonomic furniture</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-orange rounded-lg flex items-center justify-center flex-shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <div>
-                  <h3 className="font-bold text-black mb-1">24/7 Security</h3>
-                  <p className="text-sm text-gray-600">Secure access control system</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-green rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <div>
-                  <h3 className="font-bold text-black mb-1">Prime Location</h3>
-                  <p className="text-sm text-gray-600">Central business district access</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-pink rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-5 h-5 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <div>
-                  <h3 className="font-bold text-black mb-1">Flexible Terms</h3>
-                  <p className="text-sm text-gray-600">Short or long-term leases</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Inquiry Form Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-black mb-4 uppercase tracking-wide">
-                Request Office Information
-              </h2>
-              <p className="text-xl text-gray-600">
-                Fill out the form below and our team will contact you within 24 hours
-              </p>
-            </div>
-
-            <InquiryForm formType="office" title="Office Leasing Inquiry" />
+            <InquiryForm formType="office" title="Space partnership inquiry" />
           </div>
         </section>
       </main>

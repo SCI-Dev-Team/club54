@@ -25,7 +25,7 @@ export default function Footer() {
             <h4 className="mb-4 text-lg font-semibold uppercase tracking-wide">{t.services}</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/#menu" className="text-white/60 transition-colors hover:text-red">
+                <Link href="/#overview" className="text-white/60 transition-colors hover:text-red">
                   {t.linkCoffeeMenu}
                 </Link>
               </li>
@@ -57,9 +57,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-white/60 transition-colors hover:text-red">
+                <Link href="/contact" className="text-white/60 transition-colors hover:text-red">
                   {t.linkLocations}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

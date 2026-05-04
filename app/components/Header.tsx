@@ -7,12 +7,12 @@ import { useState } from 'react';
 import { setSiteLanguage, useSiteLanguage } from '@/app/lib/useSiteLanguage';
 
 const NAV_LABELS = {
-  en: { menu: 'Menu', events: 'Events', community: 'Community', book: 'Book Now' },
+  en: { menu: 'Overview', events: 'Events', community: 'Community', book: 'Contact' },
   km: {
-    menu: 'ម៉ឺនុយ',
+    menu: 'សង្ខេប',
     events: 'ព្រឹត្តិការណ៍',
     community: 'សហគមន៍',
-    book: 'កក់ឥឡូវ',
+    book: 'ទំនាក់ទំនង',
   },
 } as const;
 
@@ -61,7 +61,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <Image 
               src="/white-logo.png" 
-              alt="Club54 Coffee & Events" 
+              alt="Club 54" 
               width={120} 
               height={60}
               className="h-20 w-auto"
@@ -70,7 +70,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
-            <Link href="/#menu" className="text-white hover:text-red transition-colors font-medium">
+            <Link href="/#overview" className="text-white hover:text-red transition-colors font-medium">
               {t.menu}
             </Link>
             <Link href="/events" className="text-white hover:text-red transition-colors font-medium">
@@ -109,7 +109,7 @@ export default function Header() {
           <div className="md:hidden py-4 border-t border-white/20">
             <div className="flex flex-col space-y-4">
               <Link
-                href="/#menu"
+                href="/#overview"
                 className="text-white hover:text-red transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >

@@ -13,11 +13,14 @@ export default function ContactPage() {
         <section className="relative bg-gradient-to-br from-black to-plum text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
+              <p className="text-xs font-medium uppercase tracking-widest text-white/70">
+                Working concept — confidential
+              </p>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 uppercase tracking-wide">
-                Get In Touch
+                Contact & CSR alignment
               </h1>
               <p className="text-xl text-gray-100 leading-relaxed">
-                Ready to join Club54? Have questions about our spaces or services? We're here to help. Reach out and let's start the conversation.
+                Reach out for communication, partnership exploration, or general inquiries about Club 54. Further operational details are shared in subsequent collaboration stages as the project develops.
               </p>
             </div>
           </div>
@@ -42,9 +45,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-xl font-bold text-black mb-2 uppercase">Address</h3>
                       <p className="text-gray-700 leading-relaxed">
-                        54 Main Street<br />
-                        Downtown District<br />
-                        City, State 12345
+                        Location and hours will be confirmed as the project advances. Use this channel for alignment conversations.
                       </p>
                     </div>
                   </div>
@@ -57,11 +58,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-xl font-bold text-black mb-2 uppercase">Phone</h3>
                       <p className="text-gray-700">
-                        <a href="tel:+15551234567" className="hover:text-teal transition-colors">
-                          +1 (555) 123-4567
-                        </a>
+                        <span className="text-gray-600">To be shared when collaboration moves forward.</span>
                       </p>
-                      <p className="text-sm text-gray-600 mt-1">Mon-Fri: 9am - 6pm</p>
                     </div>
                   </div>
 
@@ -77,7 +75,7 @@ export default function ContactPage() {
                           hello@club54.com
                         </a>
                       </p>
-                      <p className="text-sm text-gray-600 mt-1">We'll respond within 24 hours</p>
+                      <p className="text-sm text-gray-600 mt-1">We aim to respond within a few business days</p>
                     </div>
                   </div>
 
@@ -87,13 +85,10 @@ export default function ContactPage() {
                       <Clock className="w-6 h-6 text-white" strokeWidth={2} aria-hidden />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black mb-2 uppercase">Office Hours</h3>
+                      <h3 className="text-xl font-bold text-black mb-2 uppercase">Availability</h3>
                       <div className="text-gray-700 space-y-1">
-                        <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
-                        <p>Saturday: 9:00 AM - 5:00 PM</p>
-                        <p>Sunday: Closed</p>
+                        <p>Scheduling details will follow formal alignment discussions.</p>
                       </div>
-                      <p className="text-sm text-gray-600 mt-2">*Member access available 24/7</p>
                     </div>
                   </div>
                 </div>
@@ -151,10 +146,10 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-black mb-4 uppercase tracking-wide">
-                Find Us
+                Location
               </h2>
               <p className="text-xl text-gray-600">
-                Located in the heart of downtown, easily accessible by public transport
+                A specific address and directions will be provided during later collaboration stages.
               </p>
             </div>
 
@@ -164,8 +159,8 @@ export default function ContactPage() {
                 <div className="w-20 h-20 bg-red rounded-full flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-10 h-10 text-white" strokeWidth={2} aria-hidden />
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-2 uppercase">Club54</h3>
-                <p className="text-gray-700">54 Main Street, Downtown District</p>
+                <h3 className="text-2xl font-bold text-black mb-2 uppercase">Club 54</h3>
+                <p className="text-gray-700">Address to be announced</p>
                 <a
                   href="https://maps.google.com"
                   target="_blank"
@@ -184,11 +179,10 @@ export default function ContactPage() {
                   <div className="w-10 h-10 bg-teal rounded-lg flex items-center justify-center">
                     <TrainFront className="w-5 h-5 text-white" strokeWidth={2} aria-hidden />
                   </div>
-                  <h3 className="font-bold text-black uppercase">By Subway</h3>
+                  <h3 className="font-bold text-black uppercase">Transit</h3>
                 </div>
                 <p className="text-sm text-gray-600">
-                  Downtown Station - 2 min walk<br />
-                  Lines A, B, C available
+                  Access guidance will accompany venue confirmation.
                 </p>
               </div>
 
@@ -200,8 +194,7 @@ export default function ContactPage() {
                   <h3 className="font-bold text-black uppercase">Parking</h3>
                 </div>
                 <p className="text-sm text-gray-600">
-                  On-site parking garage<br />
-                  Member discounts available
+                  Parking notes shared when site details are finalized.
                 </p>
               </div>
 
@@ -210,11 +203,10 @@ export default function ContactPage() {
                   <div className="w-10 h-10 bg-green rounded-lg flex items-center justify-center">
                     <Bus className="w-5 h-5 text-white" strokeWidth={2} aria-hidden />
                   </div>
-                  <h3 className="font-bold text-black uppercase">By Bus</h3>
+                  <h3 className="font-bold text-black uppercase">Other access</h3>
                 </div>
                 <p className="text-sm text-gray-600">
-                  Main St bus stop - Right outside<br />
-                  Routes 10, 15, 22, 45
+                  Inclusion and accessibility priorities will be communicated with partners early.
                 </p>
               </div>
             </div>
@@ -232,30 +224,30 @@ export default function ContactPage() {
 
             <div className="space-y-6">
               <div className="bg-biscuit rounded-xl p-6">
-                <h3 className="text-xl font-bold text-black mb-3 uppercase">Can I schedule a tour?</h3>
+                <h3 className="text-xl font-bold text-black mb-3 uppercase">How do we explore partnership?</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Absolutely! We offer tours Monday through Friday. Use the contact form above or call us directly to schedule your visit. We'll give you a complete tour and answer all your questions.
+                  Share your organization’s focus (skills, events, storytelling, or responsible product collaborations) via the form or email. We will route your note to the appropriate lead and suggest next steps aligned with the Club 54 concept.
                 </p>
               </div>
 
               <div className="bg-biscuit rounded-xl p-6">
-                <h3 className="text-xl font-bold text-black mb-3 uppercase">What are your membership options?</h3>
+                <h3 className="text-xl font-bold text-black mb-3 uppercase">Is this a public venue listing?</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  We offer flexible options including hot desks, dedicated desks, private offices, and full office suites. Both monthly and annual memberships are available with various pricing tiers.
+                  This site presents a working concept for communication and CSR alignment. It is not authorization to reproduce or implement the model without written agreement from the founding team.
                 </p>
               </div>
 
               <div className="bg-biscuit rounded-xl p-6">
-                <h3 className="text-xl font-bold text-black mb-3 uppercase">Do you offer day passes?</h3>
+                <h3 className="text-xl font-bold text-black mb-3 uppercase">When will operational details be available?</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Yes! Day passes are available for $29/day for hot desk access. Perfect for trying out the space or for occasional use. Contact us to purchase a day pass.
+                  Timelines, staffing, pricing (if applicable), and venue specifics will be shared as collaborations mature—consistent with the overview shared here.
                 </p>
               </div>
 
               <div className="bg-biscuit rounded-xl p-6">
-                <h3 className="text-xl font-bold text-black mb-3 uppercase">What's included in membership?</h3>
+                <h3 className="text-xl font-bold text-black mb-3 uppercase">Can media or communications teams get assets?</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  All memberships include high-speed internet, printing, coffee/tea, access to common areas, and participation in community events. Additional perks vary by membership level.
+                  Yes—note your needs (brand narrative, impact storytelling, co-branded campaigns, or partner materials) and the communications team will coordinate under agreed guidelines.
                 </p>
               </div>
             </div>

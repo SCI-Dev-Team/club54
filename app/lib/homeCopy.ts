@@ -1,135 +1,137 @@
 /** Home page copy keyed by `useSiteLanguage()` — matches Header NAV_LABELS style. */
 export const HOME_COPY = {
   en: {
-    heroTitleBefore: 'Where Coffee Meets',
-    heroTitleAccent: 'Community',
+    heroTitleBefore: 'Social innovation',
+    heroTitleAccent: 'for youth',
     heroSubtitle:
-      'Premium coffee, vibrant atmosphere, and unforgettable events in one dynamic space.',
-    visitUsToday: 'Visit Us Today',
-    viewMenu: 'View Menu',
-    heroImageAlt: 'Coffee latte art',
+      'Club 54 is a social innovation café and collaborative space empowering children and youth—especially from marginalized communities—through creativity, skills, and community engagement.',
+    visitUsToday: 'Contact us',
+    viewMenu: 'Read overview',
+    heroImageAlt: 'Coffee and community space',
 
-    whatWeOffer: 'What We Offer',
-    whatWeOfferSub: 'Exceptional coffee, delicious food, and the perfect venue for your events',
+    whatWeOffer: 'What Club 54 is',
+    whatWeOfferSub:
+      'A community café, collaborative workspace, and youth learning environment—inspired by Article 54 of the UN Convention on the Rights of the Child (CRC), on access to information, opportunity, and support for children’s development.',
 
-    premiumCoffee: 'Premium Coffee',
+    premiumCoffee: 'Community café & coffee culture',
     premiumCoffeeDesc:
-      'Artisan coffee crafted by expert baristas. From espresso classics to signature drinks, we source the finest beans for every cup.',
-    viewFullMenu: 'View Full Menu',
+      'Responsible, sustainable coffee culture and community engagement activities help sustain the model while keeping the space welcoming and youth-centered.',
+    viewFullMenu: 'See community',
 
-    freshFood: 'Fresh Food & Pastries',
+    freshFood: 'Collaborative workspace',
     freshFoodDesc:
-      'Daily baked goods, light bites, and full meals. Perfect for breakfast, lunch, or a quick snack with your coffee.',
-    seeMenu: 'See Menu',
+      'A place where young people can develop ideas, learn practical skills, and connect with mentors and partners alongside professionals and community allies.',
+    seeMenu: 'Learn more',
 
-    privateEvents: 'Private Events',
+    privateEvents: 'Learning & events',
     privateEventsDesc:
-      'Host your next gathering in our versatile space. Perfect for meetings, celebrations, workshops, live music, and community events.',
-    bookEventSpace: 'Book Event Space',
+      'Youth ideation and creative projects, training and mentorship, and social innovation initiatives—all in a safe, inspiring setting.',
+    bookEventSpace: 'View events',
 
-    moreThanJust: 'More Than Just',
-    coffeeWord: 'Coffee',
+    moreThanJust: 'More than a',
+    coffeeWord: 'café',
     communityBlurb:
-      'Club54 is a vibrant community hub where coffee lovers connect, create, and celebrate together.',
+      'Club 54 aims to create an inclusive ecosystem where youth, professionals, and community partners collaborate through real-world learning opportunities.',
 
-    communityVibes: 'Community Vibes',
+    communityVibes: 'Inclusive ecosystem',
     communityVibesDesc:
-      'Join a welcoming community of coffee enthusiasts, creatives, and locals. Regular gatherings and shared experiences.',
+      'Partners who share values around youth empowerment, sustainability, and community development can explore skills initiatives, events, storytelling, and aligned collaborations.',
 
-    liveEvents: 'Live Events',
+    liveEvents: 'Social enterprise model',
     liveEventsDesc:
-      "Open mic nights, acoustic sessions, art exhibitions, and pop-up markets. There's always something happening at Club54.",
+      'Revenue-generating activities support youth empowerment—skills development, inclusive training for marginalized groups, and engagement through learning and creativity.',
 
-    cozyAtmosphere: 'Cozy Atmosphere',
+    cozyAtmosphere: 'Safe & inspiring',
     cozyAtmosphereDesc:
-      "Comfortable seating, great music, and warm ambiance. Whether you're working, relaxing, or socializing, feel right at home.",
+      'The concept combines warmth and practicality so young people have room to grow—with mentorship, programming, and partners woven into everyday rhythm.',
 
-    joinCommunity: 'Join Our Community',
+    joinCommunity: 'Explore the community',
 
     upcoming: 'Upcoming',
-    eventsWord: 'Events',
-    event1Title: 'Live Jazz Night',
-    event1Time: 'This Friday at 7 PM',
-    event2Title: 'Coffee Tasting Workshop',
-    event2Time: 'Saturday at 2 PM',
-    event3Title: 'Open Mic Night',
-    event3Time: 'Next Thursday at 8 PM',
-    seeAllEvents: 'See All Events',
+    eventsWord: 'events',
+    event1Title: 'Community programming',
+    event1Time: 'Training, mentorship & gatherings—as announced',
+    event2Title: 'Youth ideation & projects',
+    event2Time: 'Creative and social innovation activity blocks',
+    event3Title: 'Partners & collaborators',
+    event3Time: 'CSR alignment and co-designed initiatives',
+    seeAllEvents: 'See all events',
     upcomingEventsLoading: 'Loading…',
     homeSidebarCalendarTitle: 'On the calendar',
     homeSidebarSpotlightTitle: 'Spotlight',
 
-    readyPrefix: 'Ready to Experience',
-    readyAccent: 'Club54',
+    readyPrefix: 'Interested in',
+    readyAccent: 'CSR alignment',
     readySuffix: '?',
-    ctaSub: 'Visit us today for exceptional coffee, or get in touch to book your next event.',
-    visitOrBook: 'Visit or Book Today',
+    ctaSub:
+      'Further operational details will be shared in subsequent collaboration stages. Reach out for communication, partnership, or general inquiries.',
+    visitOrBook: 'Get in touch',
   },
   km: {
-    heroTitleBefore: 'កន្លែងដែលកាហ្វេជួប',
-    heroTitleAccent: 'សហគមន៍',
+    heroTitleBefore: 'នវានុវត្តន៍សង្គមសម្រាប់',
+    heroTitleAccent: 'យុវជន',
     heroSubtitle:
-      'កាហ្វេគុណភាពខ្ពស់ បរិយាកាសរស់រវរ និងព្រឹត្តិការណ៍ដែលគួរឱ្យចងចាំ ក្នុងទីកន្លែងតែមួយដែលពេញចិត្ត។',
-    visitUsToday: 'មកទស្សនាថ្ងៃនេះ',
-    viewMenu: 'មើលម៉ឺនុយ',
-    heroImageAlt: 'សិល្បៈលើកាហ្វេ',
+      'Club 54 ជាកាហ្វេនវានុវត្តន៍សង្គម និងកន្លែងសហការដែលពង្រឹងកុមារ និងយុវជន—ជាពិសេសពីសហគមន៍ងាយរងគ្រោះ—តាមរយៈភាពច្នៃប្រឌិត ជំនាញ និងការចូលរួមសហគមន៍។',
+    visitUsToday: 'ទាក់ទងយើង',
+    viewMenu: 'អានសង្ខេប',
+    heroImageAlt: 'កាហ្វេ និងកន្លែងសហគមន៍',
 
-    whatWeOffer: 'អ្វីដែលយើងមាន',
+    whatWeOffer: 'Club 54 គឺជាអ្វី',
     whatWeOfferSub:
-      'កាហ្វេឆ្នួត អាហារឈ្ងុយ និងកន្លែងល្អសម្រាប់ព្រឹត្តិការណ៍របស់អ្នក',
+      'កាហ្វេសហគមន៍ កន្លែងសហការ និងបរិយាកាសរៀនសូត្ររបស់យុវជន—រចនាឡើងដោយបានស្រមៃពីមាត្រា ៥៤ នៃអនុសញ្ញាសិទ្ធិកុមាររបស់អង្គការសហប្រជាជាតិ (CRC) ស្តីពីការចូលដំណើរការព័ត៌មាន ឱកាស និងការគាំទ្រការអភិវឌ្ឍន៍កុមារ។',
 
-    premiumCoffee: 'កាហ្វេពិសេស',
+    premiumCoffee: 'កាហ្វេសហគមន៍ និងវប្បធម៌កាហ្វេ',
     premiumCoffeeDesc:
-      'កាហ្វេសិល្បៈចម្រាស់ដោយអ្នកជំនាញ។ ពីអេស្ព្រេសូរដូចដើម រហូតដល់ភេសជ្ជៈពិសេស យើងជ្រើសរើសសណ្តែកល្អបំផុតសម្រាប់រាល់ពែង។',
-    viewFullMenu: 'មើលម៉ឺនុយពេញលេញ',
+      'វប្បធម៌កាហ្វេទទួលខុសត្រូវ និងនិរន្តរភាព ជាមួយសកម្មភាពចូលរួមសហគមន៍ ជួយផ្គត់ផ្គង់ម៉ូដែលពេលដំណាលគ្នារក្សាទីកន្លែងស្វាគមន៍ និងមានកុមារនៅកណ្តាល។',
+    viewFullMenu: 'មើលសហគមន៍',
 
-    freshFood: 'អាហារថ្មី និងនំបុ័ង',
+    freshFood: 'កន្លែងសហការ',
     freshFoodDesc:
-      'នំបុ័ងថ្មីរាល់ថ្ងៃ អាហារស្រាល និងអាហារពេញមួយពេល។ សមស្របសម្រាប់អាហារពេលព្រឹក ថ្ងៃត្រង់ ឬជាមួយកាហ្វេ។',
-    seeMenu: 'មើលម៉ឺនុយ',
+      'កន្លែងដែលយុវជនអាចអភិវឌ្ឍគំនិត រៀនជំនាញជាក់ស្តែង និងតភ្ជាប់ជាមួយអ្នកណែនាំ និងដៃគូ រួមជាមួយអាជីវកម្ម និងមិត្តសហគមន៍។',
+    seeMenu: 'ស្វែងយល់បន្ថែម',
 
-    privateEvents: 'ព្រឹត្តិការណ៍ឯកជន',
+    privateEvents: 'ការរៀន និងព្រឹត្តិការណ៍',
     privateEventsDesc:
-      'រៀបចំការជួបជុំនៅកន្លែងយើង។ សមស្របសម្រាប់ប្រជុំ ការប្រារព្ធខួប សិក្ខាសាលា តន្ត្រីផ្ទាល់ និងព្រឹត្តិការណ៍សហគមន៍។',
-    bookEventSpace: 'កក់កន្លែងព្រឹត្តិការណ៍',
+      'ការរកឃើញគំនិត និងគម្រោងច្នៃប្រឌិតរបស់យុវជន ការបណ្តុះបណ្តាល និងការណែនាំ និងផែនការនវានុវត្តន៍សង្គម—ទាំងអស់ក្នុងបរិយាកាសសុវត្ថិភាព និងលើកទឹកចិត្ត។',
+    bookEventSpace: 'មើលព្រឹត្តិការណ៍',
 
     moreThanJust: 'លើសពី',
     coffeeWord: 'កាហ្វេ',
     communityBlurb:
-      'Club54 គឺជាកន្លែងជួបជុំសហគមន៍ដែលអ្នកចូលចិត្តកាហ្វេ ច្នៃប្រឌិត និងរីករាយរួមគ្នា។',
+      'Club 54 មានគោលបំណងបង្កើតប្រព័ន្ធរួមបញ្ចូលដែលយុវជន អាជីវកម្ម និងដៃគូសហគមន៍សហការរួមគ្នាតាមរយៈឱកាសរៀននៅក្នុងពិភពពិត។',
 
-    communityVibes: 'បរិយាកាសសហគមន៍',
+    communityVibes: 'ប្រព័ន្ធរួមបញ្ចូល',
     communityVibesDesc:
-      'ចូលរួមសហគមន៍ស្វាគមន៍ អ្នកចូលចិត្តកាហ្វេ អ្នកប្រឌិត និងមនុស្សក្នុងតំបន់។ ការជួបជុំទៀងទាត់ និងបទពិសោធរួមគ្នា។',
+      'ដៃគូដែលចែករំលែកតម្លៃជុំវិញការពង្រឹងយុវជន ភាពនិរន្តរភាព និងការអភិវឌ្ឍសហគមន៍ អាចស្វែងរកកម្មវិធីជំនាញ ព្រឹត្តិការណ៍ រឿងរ៉ាវផលប៉ះពាល់ និងការសហការដែលស្របគ្នា។',
 
-    liveEvents: 'ព្រឹត្តិការណ៍ផ្ទាល់',
+    liveEvents: 'ម៉ូដសហគមន៍សេដ្ឋកិច្ច',
     liveEventsDesc:
-      'យប់បើកមីក្រូហ្វូន សម្លេងអាក័ស្ទិច តាំងគំនូរ និងផ្សារតូចៗ។ មានអ្វីរីករាយនៅ Club54 ជានិច្ច។',
+      'សកម្មភាពរកប្រាក់ចំណូលគាំទ្រការពង្រឹងយុវជន—ការអភិវឌ្ឍន៍ជំនាញ ការបណ្តុះបណ្តាលរួមបញ្ចូលសម្រាប់ក្រុមងាយរងគ្រោះ និងការចូលរួមតាមរយៈការរៀន និងភាពច្នៃប្រឌិត។',
 
-    cozyAtmosphere: 'បរិយាកាសកក់ក្តៅ',
+    cozyAtmosphere: 'សុវត្ថិភាព និងលើកទឹកចិត្ត',
     cozyAtmosphereDesc:
-      'កៅអីស្រួល តន្ត្រីល្អ និងម៉ូតស្នាមកក់ក្តៅ។ មិនថាកំពុងធ្វើការ សម្រាក ឬសង្គម សូមមានអារម្មណ៍ដូចនៅផ្ទះ។',
+      'គំនិតរួមបញ្ចូលកក់ក្តៅ និងប្រើប្រាស់បាន ដើម្បីឱ្យយុវជនមានរយៈដង់រីកចម្រើន—ជាមួយការណែនាំ កម្មវិធី និងដៃគូក្នុងចង្វាក់ប្រចាំថ្ងៃ។',
 
-    joinCommunity: 'ចូលរួមសហគមន៍យើង',
+    joinCommunity: 'ស្វែងរកសហគមន៍',
 
     upcoming: 'ព្រឹត្តិការណ៍',
     eventsWord: 'ខាងមុខ',
-    event1Title: 'យប់ហ្សាស់ស៊ីវិញ្ញាណ',
-    event1Time: 'សុក្រនេះម៉ោង ៧ ល្ងាច',
-    event2Title: 'សិក្ខាសាលារសជាតិកាហ្វេ',
-    event2Time: 'ថ្ងៃសៅរ៍ម៉ោង ២ រសៀល',
-    event3Title: 'យប់បើកមីក្រូហ្វូន',
-    event3Time: 'ថ្ងៃព្រហស្បតិ៍ក្រោយម៉ោង ៨ យប់',
+    event1Title: 'កម្មវិធីសហគមន៍',
+    event1Time: 'ការបណ្តុះបណ្តាល ការណែនាំ និងការជួបជុំ—តាមការប្រកាស',
+    event2Title: 'ការរកឃើញគំនិត និងគម្រោងយុវជន',
+    event2Time: 'សកម្មភាពច្នៃប្រឌិត និងនវានុវត្តន៍សង្គម',
+    event3Title: 'ដៃគូ និងអ្នកសហការ',
+    event3Time: 'ការសម្រប CSR និងផែនការរួមគ្នា',
     seeAllEvents: 'មើលព្រឹត្តិការណ៍ទាំងអស់',
     upcomingEventsLoading: 'កំពុងផ្ទុក…',
     homeSidebarCalendarTitle: 'ក្នុងប្រតិទិន',
     homeSidebarSpotlightTitle: 'ពិសេស',
 
-    readyPrefix: 'ត្រៀមរីករាយជាមួយ',
-    readyAccent: 'Club54',
+    readyPrefix: 'ចាប់អារម្មណ៍',
+    readyAccent: 'ការសម្រប CSR',
     readySuffix: '?',
     ctaSub:
-      'មកទស្សនាថ្ងៃនេះសម្រាប់កាហ្វេឆ្នួត ឬទាក់ទងដើម្បីកក់ព្រឹត្តិការណ៍បន្ទាប់របស់អ្នក។',
-    visitOrBook: 'មកឬកក់ថ្ងៃនេះ',
+      'ព័ត៌មានប្រតិបត្តិការបន្ថែមនឹងត្រូវបានចែករំលែកនៅដំណាក់ការសហការបន្ទាប់។ ទាក់ទងសម្រាប់ទំនាក់ទំនង ភាពជាដៃគូ ឬសំណួរទូទៅ។',
+    visitOrBook: 'ទាក់ទង',
   },
 } as const;
