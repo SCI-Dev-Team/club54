@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { BookOpen, CalendarDays, ChevronRight, MapPin, Moon, Music, Users } from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { useSiteLanguage } from './lib/useSiteLanguage';
@@ -96,14 +97,7 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <div className="group rounded-xl border border-black/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-red/40 hover:shadow-xl">
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-red transition-transform group-hover:scale-110">
-                  <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                    />
-                  </svg>
+                  <Moon className="h-8 w-8 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.premiumCoffee}</h3>
                 <p className="mb-6 leading-relaxed text-black/80">{t.premiumCoffeeDesc}</p>
@@ -112,22 +106,13 @@ export default function Home() {
                   className="inline-flex items-center font-semibold uppercase tracking-wide text-red transition-colors hover:text-black"
                 >
                   {t.viewFullMenu}
-                  <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <ChevronRight className="ml-2 h-5 w-5" strokeWidth={2} aria-hidden />
                 </Link>
               </div>
 
               <div className="group rounded-xl border border-black/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-red/40 hover:shadow-xl">
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-red transition-transform group-hover:scale-110">
-                  <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    />
-                  </svg>
+                  <BookOpen className="h-8 w-8 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.freshFood}</h3>
                 <p className="mb-6 leading-relaxed text-black/80">{t.freshFoodDesc}</p>
@@ -136,22 +121,13 @@ export default function Home() {
                   className="inline-flex items-center font-semibold uppercase tracking-wide text-red transition-colors hover:text-black"
                 >
                   {t.seeMenu}
-                  <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <ChevronRight className="ml-2 h-5 w-5" strokeWidth={2} aria-hidden />
                 </Link>
               </div>
 
               <div className="group rounded-xl border border-black/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-red/40 hover:shadow-xl">
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-red transition-transform group-hover:scale-110">
-                  <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
+                  <CalendarDays className="h-8 w-8 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.privateEvents}</h3>
                 <p className="mb-6 leading-relaxed text-black/80">{t.privateEventsDesc}</p>
@@ -160,9 +136,7 @@ export default function Home() {
                   className="inline-flex items-center font-semibold uppercase tracking-wide text-red transition-colors hover:text-black"
                 >
                   {t.bookEventSpace}
-                  <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <ChevronRight className="ml-2 h-5 w-5" strokeWidth={2} aria-hidden />
                 </Link>
               </div>
             </div>
@@ -182,14 +156,7 @@ export default function Home() {
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-red">
-                      <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                        />
-                      </svg>
+                      <Users className="h-6 w-6 text-white" strokeWidth={2} aria-hidden />
                     </div>
                     <div>
                       <h3 className="mb-2 text-xl font-bold uppercase text-black">{t.communityVibes}</h3>
@@ -199,14 +166,7 @@ export default function Home() {
 
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-red">
-                      <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
-                        />
-                      </svg>
+                      <Music className="h-6 w-6 text-white" strokeWidth={2} aria-hidden />
                     </div>
                     <div>
                       <h3 className="mb-2 text-xl font-bold uppercase text-black">{t.liveEvents}</h3>
@@ -216,20 +176,7 @@ export default function Home() {
 
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-red">
-                      <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
+                      <MapPin className="h-6 w-6 text-white" strokeWidth={2} aria-hidden />
                     </div>
                     <div>
                       <h3 className="mb-2 text-xl font-bold uppercase text-black">{t.cozyAtmosphere}</h3>

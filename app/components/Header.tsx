@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { setSiteLanguage, useSiteLanguage } from '@/app/lib/useSiteLanguage';
 
@@ -94,21 +95,11 @@ export default function Header() {
               aria-expanded={isMenuOpen}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-white" strokeWidth={2} aria-hidden />
+              ) : (
+                <Menu className="h-6 w-6 text-white" strokeWidth={2} aria-hidden />
+              )}
             </button>
           </div>
         </div>

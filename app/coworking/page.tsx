@@ -1,5 +1,17 @@
 'use client';
 
+import {
+  AlertCircle,
+  Building2,
+  CalendarDays,
+  Check,
+  CheckCircle2,
+  Monitor,
+  Smartphone,
+  Users,
+  Utensils,
+  Zap,
+} from 'lucide-react';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -110,13 +122,9 @@ export default function CoworkingPage() {
                 >
                   <div className="flex items-start gap-3">
                     {availabilityResult.available ? (
-                      <svg className="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
+                      <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-green" strokeWidth={2} aria-hidden />
                     ) : (
-                      <svg className="w-6 h-6 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                      </svg>
+                      <AlertCircle className="mt-0.5 h-6 w-6 shrink-0 text-orange" strokeWidth={2} aria-hidden />
                     )}
                     <p className="font-medium">{availabilityResult.message}</p>
                   </div>
@@ -142,35 +150,25 @@ export default function CoworkingPage() {
               {/* Hot Desk */}
               <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
                 <div className="w-12 h-12 bg-teal rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
+                  <Smartphone className="w-6 h-6 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-3 uppercase">Hot Desk</h3>
                 <p className="text-3xl font-bold text-teal mb-4">$29<span className="text-lg text-gray-600">/day</span></p>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     Any available desk
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     High-speed WiFi
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     Common areas
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     Coffee & tea
                   </li>
                 </ul>
@@ -182,35 +180,25 @@ export default function CoworkingPage() {
                   Popular
                 </div>
                 <div className="w-12 h-12 bg-green rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                  <Monitor className="w-6 h-6 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-3 uppercase">Dedicated Desk</h3>
                 <p className="text-3xl font-bold text-green mb-4">$399<span className="text-lg text-gray-600">/mo</span></p>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     Your own desk
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     24/7 access
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     Lockable storage
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     5 hrs meeting room
                   </li>
                 </ul>
@@ -219,35 +207,25 @@ export default function CoworkingPage() {
               {/* Private Office */}
               <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
                 <div className="w-12 h-12 bg-purple rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
-                  </svg>
+                  <Building2 className="w-6 h-6 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-3 uppercase">Private Office</h3>
                 <p className="text-3xl font-bold text-purple mb-4">$899<span className="text-lg text-gray-600">/mo</span></p>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     Private lockable office
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     1-4 people
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     Fully furnished
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     10 hrs meeting room
                   </li>
                 </ul>
@@ -256,35 +234,25 @@ export default function CoworkingPage() {
               {/* Meeting Room */}
               <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
                 <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                  <CalendarDays className="w-6 h-6 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-3 uppercase">Meeting Room</h3>
                 <p className="text-3xl font-bold text-orange mb-4">$45<span className="text-lg text-gray-600">/hr</span></p>
                 <ul className="space-y-2 text-sm text-gray-600 mb-6">
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     Book by the hour
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     6-12 people capacity
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     AV equipment
                   </li>
                   <li className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <Check className="w-4 h-4 text-green" strokeWidth={3} aria-hidden />
                     Whiteboard & display
                   </li>
                 </ul>
@@ -303,9 +271,7 @@ export default function CoworkingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-teal rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
+                  <Users className="w-8 h-8 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-3 uppercase">Networking Events</h3>
                 <p className="text-gray-600">
@@ -315,9 +281,7 @@ export default function CoworkingPage() {
 
               <div className="text-center">
                 <div className="w-16 h-16 bg-green rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                  </svg>
+                  <Utensils className="w-8 h-8 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-3 uppercase">Premium Amenities</h3>
                 <p className="text-gray-600">
@@ -327,9 +291,7 @@ export default function CoworkingPage() {
 
               <div className="text-center">
                 <div className="w-16 h-16 bg-purple rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                  <Zap className="w-8 h-8 text-white" strokeWidth={2} aria-hidden />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-3 uppercase">Productivity Boost</h3>
                 <p className="text-gray-600">
