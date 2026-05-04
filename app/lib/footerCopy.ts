@@ -2,7 +2,7 @@
 export const FOOTER_COPY = {
   en: {
     tagline:
-      'Club 54 — a social innovation café and collaborative space for youth empowerment, CSR alignment, and community partnership. Working concept; shared for communication purposes.',
+      'Club54 — a social innovation café and collaborative space for youth empowerment, CSR alignment, and community partnership. Working concept; shared for communication purposes.',
     services: 'Explore',
     linkCoffeeMenu: 'Overview',
     linkEventHosting: 'Events',
@@ -16,7 +16,7 @@ export const FOOTER_COPY = {
   },
   km: {
     tagline:
-      'Club 54 — កាហ្វេនវានុវត្តន៍សង្គម និងកន្លែងសហការសម្រាប់ការពង្រឹងយុវជន ការសម្រប CSR និងភាពជាដៃគូសហគមន៍។ គំនិតការងារ ចែករំលែកសម្រាប់ទំនាក់ទំនង។',
+      'Club54 — កាហ្វេនវានុវត្តន៍សង្គម និងកន្លែងសហការសម្រាប់ការពង្រឹងយុវជន ការសម្រប CSR និងភាពជាដៃគូសហគមន៍។ គំនិតការងារ ចែករំលែកសម្រាប់ទំនាក់ទំនង។',
     services: 'ស្វែងរក',
     linkCoffeeMenu: 'សង្ខេប',
     linkEventHosting: 'ព្រឹត្តិការណ៍',

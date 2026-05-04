@@ -48,7 +48,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
               <div>
-                <h1 className="mb-6 text-5xl font-bold uppercase leading-tight tracking-wide md:text-6xl">
+                <h1 className="mb-6 text-5xl font-bold leading-tight tracking-wide md:text-6xl">
                   {t.heroTitleBefore} <span className="text-red">{t.heroTitleAccent}</span>
                 </h1>
                 <p className="mb-8 text-xl leading-relaxed text-white/80 md:text-2xl">{t.heroSubtitle}</p>
@@ -88,7 +88,7 @@ export default function Home() {
         <section id="overview" className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-16 text-center">
-              <h2 className="mb-4 text-4xl font-bold uppercase tracking-wide text-black md:text-5xl">
+              <h2 className="mb-4 text-4xl font-bold tracking-wide text-black md:text-5xl">
                 {t.whatWeOffer}
               </h2>
               <p className="mx-auto max-w-3xl text-xl text-black/75">{t.whatWeOfferSub}</p>
@@ -99,7 +99,7 @@ export default function Home() {
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-red transition-transform group-hover:scale-110">
                   <Moon className="h-8 w-8 text-white" strokeWidth={2} aria-hidden />
                 </div>
-                <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.premiumCoffee}</h3>
+                <h3 className="mb-4 text-2xl font-bold text-black">{t.premiumCoffee}</h3>
                 <p className="mb-6 leading-relaxed text-black/80">{t.premiumCoffeeDesc}</p>
                 <Link
                   href="/#overview"
@@ -114,7 +114,7 @@ export default function Home() {
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-red transition-transform group-hover:scale-110">
                   <BookOpen className="h-8 w-8 text-white" strokeWidth={2} aria-hidden />
                 </div>
-                <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.freshFood}</h3>
+                <h3 className="mb-4 text-2xl font-bold text-black">{t.freshFood}</h3>
                 <p className="mb-6 leading-relaxed text-black/80">{t.freshFoodDesc}</p>
                 <Link
                   href="/#overview"
@@ -129,7 +129,7 @@ export default function Home() {
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-red transition-transform group-hover:scale-110">
                   <CalendarDays className="h-8 w-8 text-white" strokeWidth={2} aria-hidden />
                 </div>
-                <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.privateEvents}</h3>
+                <h3 className="mb-4 text-2xl font-bold text-black">{t.privateEvents}</h3>
                 <p className="mb-6 leading-relaxed text-black/80">{t.privateEventsDesc}</p>
                 <Link
                   href="/events"
@@ -148,7 +148,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
               <div>
-                <h2 className="mb-6 text-4xl font-bold uppercase tracking-wide text-black md:text-5xl">
+                <h2 className="mb-6 text-4xl font-bold tracking-wide text-black md:text-5xl">
                   {t.moreThanJust} <span className="text-red">{t.coffeeWord}</span>
                 </h2>
                 <p className="mb-8 text-xl leading-relaxed text-black/80">{t.communityBlurb}</p>
@@ -159,7 +159,7 @@ export default function Home() {
                       <Users className="h-6 w-6 text-white" strokeWidth={2} aria-hidden />
                     </div>
                     <div>
-                      <h3 className="mb-2 text-xl font-bold uppercase text-black">{t.communityVibes}</h3>
+                      <h3 className="mb-2 text-xl font-bold text-black">{t.communityVibes}</h3>
                       <p className="text-black/75">{t.communityVibesDesc}</p>
                     </div>
                   </div>
@@ -169,7 +169,7 @@ export default function Home() {
                       <Music className="h-6 w-6 text-white" strokeWidth={2} aria-hidden />
                     </div>
                     <div>
-                      <h3 className="mb-2 text-xl font-bold uppercase text-black">{t.liveEvents}</h3>
+                      <h3 className="mb-2 text-xl font-bold text-black">{t.liveEvents}</h3>
                       <p className="text-black/75">{t.liveEventsDesc}</p>
                     </div>
                   </div>
@@ -179,7 +179,7 @@ export default function Home() {
                       <MapPin className="h-6 w-6 text-white" strokeWidth={2} aria-hidden />
                     </div>
                     <div>
-                      <h3 className="mb-2 text-xl font-bold uppercase text-black">{t.cozyAtmosphere}</h3>
+                      <h3 className="mb-2 text-xl font-bold text-black">{t.cozyAtmosphere}</h3>
                       <p className="text-black/75">{t.cozyAtmosphereDesc}</p>
                     </div>
                   </div>
@@ -195,7 +195,7 @@ export default function Home() {
 
               <div className="relative">
                 <div className="rounded-2xl border border-black/10 bg-black p-8 text-white">
-                  <h3 className="mb-6 text-3xl font-bold uppercase">
+                  <h3 className="mb-6 text-3xl font-bold">
                     {t.upcoming} <span className="text-red">{t.eventsWord}</span>
                   </h3>
                   <div className="space-y-4">
@@ -352,7 +352,7 @@ export default function Home() {
         {/* CTA Section */}
         <section className="bg-black py-20 text-white">
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="mb-6 text-4xl font-bold uppercase tracking-wide md:text-5xl">
+            <h2 className="mb-6 text-4xl font-bold tracking-wide md:text-5xl">
               {t.readyPrefix} <span className="text-red">{t.readyAccent}</span>
               {t.readySuffix}
             </h2>

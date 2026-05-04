@@ -1,13 +1,23 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import { CONTACT_COPY, type InquiryGeneralLabels } from '@/app/lib/contactCopy';
 
 interface InquiryFormProps {
   formType: 'office' | 'coworking' | 'event' | 'general';
   title?: string;
+  /** When `formType` is `general`, localized labels (e.g. Khmer from contact page). Falls back to English copy. */
+  inquiryLabels?: InquiryGeneralLabels;
 }
 
-export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: InquiryFormProps) {
+export default function InquiryForm({
+  formType,
+  title = 'Send Your Inquiry',
+  inquiryLabels,
+}: InquiryFormProps) {
+  const generalCopy =
+    formType === 'general' ? (inquiryLabels ?? CONTACT_COPY.en.inquiryGeneral) : null;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,7 +35,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -40,8 +50,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
         numberOfPeople: '',
         message: '',
       });
-      
-      // Reset success message after 5 seconds
+
       setTimeout(() => setSubmitStatus('idle'), 5000);
     }, 1000);
   };
@@ -53,14 +62,18 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
     });
   };
 
+  const heading = formType === 'general' ? generalCopy!.title : title;
+
   return (
     <div className="bg-white rounded-xl shadow-lg p-8">
-      <h3 className="text-2xl font-bold text-black mb-6 uppercase">{title}</h3>
-      
+      <h3 className="text-2xl font-bold text-black mb-6">{heading}</h3>
+
       {submitStatus === 'success' && (
         <div className="mb-6 p-4 bg-green/10 border border-green rounded-lg">
           <p className="text-green font-medium">
-            Thank you! We&apos;ll get back to you within 24 hours.
+            {formType === 'general'
+              ? generalCopy!.successMessage
+              : "Thank you! We'll get back to you within 24 hours."}
           </p>
         </div>
       )}
@@ -69,7 +82,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
-              Full Name *
+              {generalCopy?.fullName ?? 'Full Name *'}
             </label>
             <input
               type="text"
@@ -79,13 +92,13 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red focus:border-transparent"
-              placeholder="John Doe"
+              placeholder={generalCopy?.placeholderName ?? 'John Doe'}
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
-              Email Address *
+              {generalCopy?.email ?? 'Email Address *'}
             </label>
             <input
               type="email"
@@ -101,7 +114,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
 
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">
-              Phone Number
+              {generalCopy?.phone ?? 'Phone Number'}
             </label>
             <input
               type="tel"
@@ -116,7 +129,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
 
           <div>
             <label htmlFor="company" className="block text-sm font-medium text-black mb-2">
-              Company Name
+              {generalCopy?.company ?? 'Company Name'}
             </label>
             <input
               type="text"
@@ -125,7 +138,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
               value={formData.company}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red focus:border-transparent"
-              placeholder="Your Company"
+              placeholder={generalCopy?.placeholderCompany ?? 'Your Company'}
             />
           </div>
 
@@ -180,7 +193,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
 
           <div>
             <label htmlFor="numberOfPeople" className="block text-sm font-medium text-black mb-2">
-              Number of People
+              {generalCopy?.numberOfPeople ?? 'Number of People'}
             </label>
             <input
               type="number"
@@ -197,7 +210,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
-            Message *
+            {generalCopy?.message ?? 'Message *'}
           </label>
           <textarea
             id="message"
@@ -207,7 +220,7 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
             required
             rows={5}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red focus:border-transparent resize-none"
-            placeholder="Tell us about your requirements..."
+            placeholder={generalCopy?.placeholderMessage ?? 'Tell us about your requirements...'}
           />
         </div>
 
@@ -216,11 +229,19 @@ export default function InquiryForm({ formType, title = 'Send Your Inquiry' }: I
           disabled={isSubmitting}
           className="w-full bg-red text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-plum transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed uppercase tracking-wide"
         >
-          {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
+          {formType === 'general'
+            ? isSubmitting
+              ? generalCopy!.submitting
+              : generalCopy!.submit
+            : isSubmitting
+              ? 'Sending...'
+              : 'Submit Inquiry'}
         </button>
 
         <p className="text-sm text-gray-600 text-center">
-          * Required fields. We&apos;ll respond to your inquiry within 24 hours.
+          {formType === 'general'
+            ? generalCopy!.footnote
+            : "* Required fields. We'll respond to your inquiry within 24 hours."}
         </p>
       </form>
     </div>

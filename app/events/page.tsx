@@ -46,7 +46,7 @@ function FeatureCard({
       <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-red text-white">
         {children}
       </div>
-      <h3 className="text-base font-semibold uppercase tracking-wide text-black">{title}</h3>
+      <h3 className="text-base font-semibold tracking-wide text-black">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-black/75">{description}</p>
     </div>
   );

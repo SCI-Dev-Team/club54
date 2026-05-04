@@ -2,17 +2,17 @@
 export const COMMUNITY_COPY = {
   en: {
     heroEyebrow: 'Working concept · Confidential',
-    heroTitleBefore: 'Club 54 · ',
+    heroTitleBefore: 'Club54 · ',
     heroTitleAccent: 'overview',
     heroBody:
-      'For communication and CSR alignment only. Club 54 is a social innovation café and collaborative space empowering children and youth—particularly from marginalized communities—through creativity, skills development, and community engagement.',
+      'For communication and CSR alignment only. Club54 is a social innovation café and collaborative space empowering children and youth—particularly from marginalized communities—through creativity, skills development, and community engagement.',
 
     joinTitleBefore: 'About ',
-    joinTitleAccent: 'Club 54',
+    joinTitleAccent: 'Club54',
     overviewP1:
-      'The name Club 54 is inspired by 54 Articles of the UN Convention on the Rights of the Child (CRC), which highlights society’s responsibility to ensure children have access to information, opportunity, and support for their development.',
+      'The name Club54 is inspired by Article 54 of the UN Convention on the Rights of the Child (CRC), which highlights society’s responsibility to ensure children have access to information, opportunity, and support for their development.',
     overviewP2:
-      'Club 54 combines a community café, collaborative workspace, and youth learning environment so young people have a safe, inspiring place to develop ideas, learn practical skills, and connect with mentors and partners.',
+      'Club54 combines a community café, collaborative workspace, and youth learning environment so young people have a safe, inspiring place to develop ideas, learn practical skills, and connect with mentors and partners.',
     becomeMember: 'Contact for alignment',
 
     impactAreas: [
@@ -36,7 +36,7 @@ export const COMMUNITY_COPY = {
 
     programsTitle: 'Purpose',
     programsSub:
-      'Club 54 aims to create an inclusive ecosystem where youth, professionals, and community partners collaborate while supporting youth development through real-world learning opportunities.',
+      'Club54 aims to create an inclusive ecosystem where youth, professionals, and community partners collaborate while supporting youth development through real-world learning opportunities.',
     programCards: [
       {
         title: 'Youth ideation & creative projects',
@@ -62,7 +62,7 @@ export const COMMUNITY_COPY = {
 
     partnershipTitle: 'Partnership opportunities',
     partnershipSub:
-      'Club 54 seeks partners who share values related to youth empowerment, sustainability, and community development.',
+      'Club54 seeks partners who share values related to youth empowerment, sustainability, and community development.',
     partnershipBullets: [
       'Skills development and training initiatives',
       'Community events and public engagement',
@@ -73,7 +73,7 @@ export const COMMUNITY_COPY = {
     communicationTitle: 'Communication & media collaboration',
     communicationSub: 'The communication and media team will support:',
     communicationBullets: [
-      'Developing the Club 54 brand identity and narrative',
+      'Developing the Club54 brand identity and narrative',
       'Highlighting the social impact and youth empowerment story',
       'Supporting co-branded campaigns and public engagement activities',
       'Producing communication materials for partners and public outreach',
@@ -81,7 +81,7 @@ export const COMMUNITY_COPY = {
 
     ipTitle: 'Intellectual ownership & use of this overview',
     ipLead:
-      'The Club 54 concept, framework, and program design are developed and owned by the Club 54 founding team.',
+      'The Club54 concept, framework, and program design are developed and owned by the Club54 founding team.',
     ipClosing:
       'This overview is shared for communication and CSR alignment purposes only and does not constitute authorization to reproduce, replicate, or implement the concept without written agreement.',
     operationalNote:
@@ -95,17 +95,17 @@ export const COMMUNITY_COPY = {
   },
   km: {
     heroEyebrow: 'គំនិតការងារ · សម្ងាត់',
-    heroTitleBefore: 'Club 54 · ',
+    heroTitleBefore: 'Club54 · ',
     heroTitleAccent: 'សង្ខេប',
     heroBody:
-      'សម្រាប់ទំនាក់ទំនង និងការសម្រប CSR ប៉ុណ្ណោះ។ Club 54 ជាកាហ្វេនវានុវត្តន៍សង្គម និងកន្លែងសហការដែលពង្រឹងកុមារ និងយុវជន—ជាពិសេសពីសហគមន៍ងាយរងគ្រោះ—តាមរយៈភាពច្នៃប្រឌិត ការអភិវឌ្ឍន៍ជំនាញ និងការចូលរួមសហគមន៍។',
+      'សម្រាប់ទំនាក់ទំនង និងការសម្រប CSR ប៉ុណ្ណោះ។ Club54 ជាកាហ្វេនវានុវត្តន៍សង្គម និងកន្លែងសហការដែលពង្រឹងកុមារ និងយុវជន—ជាពិសេសពីសហគមន៍ងាយរងគ្រោះ—តាមរយៈភាពច្នៃប្រឌិត ការអភិវឌ្ឍន៍ជំនាញ និងការចូលរួមសហគមន៍។',
 
     joinTitleBefore: 'អំពី ',
-    joinTitleAccent: 'Club 54',
+    joinTitleAccent: 'Club54',
     overviewP1:
-      'ឈ្មោះ Club 54 បានតំរូវពីមាត្រា ៥៤ នៃអនុសញ្ញាសិទ្ធិកុមាររបស់អង្គការសហប្រជាជាតិ (CRC) ដែលសង្កត់ធ្ងន់លើការទទួលខុសត្រូវរបស់សង្គមក្នុងការធានាថាកុមារមានចូលដំណើរការព័ត៌មាន ឱកាស និងការគាំទ្រការអភិវឌ្ឍន៍។',
+      'ឈ្មោះ Club54 បានតំរូវពីមាត្រា ៥៤ នៃអនុសញ្ញាសិទ្ធិកុមាររបស់អង្គការសហប្រជាជាតិ (CRC) ដែលសង្កត់ធ្ងន់លើការទទួលខុសត្រូវរបស់សង្គមក្នុងការធានាថាកុមារមានចូលដំណើរការព័ត៌មាន ឱកាស និងការគាំទ្រការអភិវឌ្ឍន៍។',
     overviewP2:
-      'Club 54 រួមបញ្ចូលកាហ្វេសហគមន៍ កន្លែងសហការ និងបរិយាកាសរៀនសូត្ររបស់យុវជន ដើម្បីផ្តល់កន្លែងសុវត្ថិភាព និងលើកទឹកចិត្តដែលយុវជនអាចអភិវឌ្ឍគំនិត រៀនជំនាញជាក់ស្តែង និងតភ្ជាប់ជាមួយអ្នកណែនាំ និងដៃគូ។',
+      'Club54 រួមបញ្ចូលកាហ្វេសហគមន៍ កន្លែងសហការ និងបរិយាកាសរៀនសូត្ររបស់យុវជន ដើម្បីផ្តល់កន្លែងសុវត្ថិភាព និងលើកទឹកចិត្តដែលយុវជនអាចអភិវឌ្ឍគំនិត រៀនជំនាញជាក់ស្តែង និងតភ្ជាប់ជាមួយអ្នកណែនាំ និងដៃគូ។',
     becomeMember: 'ទាក់ទងសម្រាប់ការសម្រប',
 
     impactAreas: [
@@ -129,7 +129,7 @@ export const COMMUNITY_COPY = {
 
     programsTitle: 'គោលបំណង',
     programsSub:
-      'Club 54 មានគោលបំណងបង្កើតប្រព័ន្ធរួមបញ្ចូលដែលយុវជន អាជីវកម្ម និងដៃគូសហគមន៍សហការរួមគ្នា ខណៈពេលគាំទ្រការអភិវឌ្ឍន៍យុវជនតាមរយៈឱកាសរៀននៅក្នុងពិភពពិត។',
+      'Club54 មានគោលបំណងបង្កើតប្រព័ន្ធរួមបញ្ចូលដែលយុវជន អាជីវកម្ម និងដៃគូសហគមន៍សហការរួមគ្នា ខណៈពេលគាំទ្រការអភិវឌ្ឍន៍យុវជនតាមរយៈឱកាសរៀននៅក្នុងពិភពពិត។',
     programCards: [
       {
         title: 'ការរកឃើញគំនិត និងគម្រោងច្នៃប្រឌិតរបស់យុវជន',
@@ -155,7 +155,7 @@ export const COMMUNITY_COPY = {
 
     partnershipTitle: 'ឱកាសភាពជាដៃគូ',
     partnershipSub:
-      'Club 54 ស្វែងរកដៃគូដែលចែករំលែកតម្លៃជុំវិញការពង្រឹងយុវជន ភាពនិរន្តរភាព និងការអភិវឌ្ឍសហគមន៍។',
+      'Club54 ស្វែងរកដៃគូដែលចែករំលែកតម្លៃជុំវិញការពង្រឹងយុវជន ភាពនិរន្តរភាព និងការអភិវឌ្ឍសហគមន៍។',
     partnershipBullets: [
       'កម្មវិធីអភិវឌ្ឍន៍ជំនាញ និងការបណ្តុះបណ្តាល',
       'ព្រឹត្តិការណ៍សហគមន៍ និងការចូលរួមសាធារណៈ',
@@ -166,7 +166,7 @@ export const COMMUNITY_COPY = {
     communicationTitle: 'ការសហការទំនាក់ទំនង និងប្រព័ន្ធផ្សព្វផ្សាយ',
     communicationSub: 'ក្រុមទំនាក់ទំនង និងប្រព័ន្ធផ្សព្វផ្សាយនឹងគាំទ្រ៖',
     communicationBullets: [
-      'ការអភិវឌ្ឍអត្តសញ្ញាណ និងរឿងរ៉ាវម៉ាក Club 54',
+      'ការអភិវឌ្ឍអត្តសញ្ញាណ និងរឿងរ៉ាវម៉ាក Club54',
       'លេចធ្វើឱ្យមានរឿងផលប៉ះពាល់សង្គម និងការពង្រឹងយុវជន',
       'គាំទ្រយុទ្ធនាការរួមម៉ាក និងសកម្មភាពចូលរួមសាធារណៈ',
       'ផលិតសម្ភារៈទំនាក់ទំនងសម្រាប់ដៃគូ និងការទំនាក់ទំនងសាធារណៈ',
@@ -174,7 +174,7 @@ export const COMMUNITY_COPY = {
 
     ipTitle: 'ម្ចាស់កម្មសិទ្ធិប្រាជ្ញា និងការប្រើប្រាស់សង្ខេបនេះ',
     ipLead:
-      'គំនិត រចនាសម្ព័ន្ធ និងការរចនាកម្មវិធី Club 54 ត្រូវបានអភិវឌ្ឍ និងជាកម្មសិទ្ធរបស់ក្រុមបង្កើត Club 54។',
+      'គំនិត រចនាសម្ព័ន្ធ និងការរចនាកម្មវិធី Club54 ត្រូវបានអភិវឌ្ឍ និងជាកម្មសិទ្ធរបស់ក្រុមបង្កើត Club54។',
     ipClosing:
       'សង្ខេបនេះត្រូវបានចែករំលែកសម្រាប់ទំនាក់ទំនង និងការសម្រប CSR ប៉ុណ្ណោះ ហើយមិនមានន័យថាបានអនុញ្ញាតឱ្យចម្លង ធ្វើម្តងទៀត ឬអនុវត្តគំនិតដោយគ្មានកិច្ចព្រមព្រៀងលីខិត។',
     operationalNote:

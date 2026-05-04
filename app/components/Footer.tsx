@@ -18,13 +18,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="col-span-1">
-            <h3 className="mb-4 text-2xl font-bold uppercase tracking-wider text-red">CLUB54</h3>
+            <h3 className="mb-4 text-2xl font-bold tracking-wide text-red">Club54</h3>
             <p className="text-sm leading-relaxed text-white/60">{t.tagline}</p>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold uppercase tracking-wide">{t.services}</h4>
+            <h4 className="mb-4 text-lg font-semibold tracking-wide">{t.services}</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/#overview" className="text-white/60 transition-colors hover:text-red">
@@ -46,7 +46,7 @@ export default function Footer() {
 
           {/* About */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold uppercase tracking-wide">{t.about}</h4>
+            <h4 className="mb-4 text-lg font-semibold tracking-wide">{t.about}</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/community" className="text-white/60 transition-colors hover:text-red">
@@ -58,17 +58,12 @@ export default function Footer() {
                   {t.linkContact}
                 </Link>
               </li>
-              <li>
-                <Link href="/contact" className="text-white/60 transition-colors hover:text-red">
-                  {t.linkLocations}
-                </Link>
-              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold uppercase tracking-wide">{t.connect}</h4>
+            <h4 className="mb-4 text-lg font-semibold tracking-wide">{t.connect}</h4>
             <ul className="space-y-3 text-white/60">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0" strokeWidth={2} aria-hidden />

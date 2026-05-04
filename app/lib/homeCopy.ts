@@ -4,12 +4,12 @@ export const HOME_COPY = {
     heroTitleBefore: 'Social innovation',
     heroTitleAccent: 'for youth',
     heroSubtitle:
-      'Club 54 is a social innovation café and collaborative space empowering children and youth—especially from marginalized communities—through creativity, skills, and community engagement.',
+      'Club54 is a social innovation café and collaborative space empowering children and youth—especially from marginalized communities—through creativity, skills, and community engagement.',
     visitUsToday: 'Contact us',
     viewMenu: 'Read overview',
     heroImageAlt: 'Coffee and community space',
 
-    whatWeOffer: 'What Club 54 is',
+    whatWeOffer: 'What Club54 is',
     whatWeOfferSub:
       'A community café, collaborative workspace, and youth learning environment—inspired by 54 Articles of the UN Convention on the Rights of the Child (CRC), on access to information, opportunity, and support for children’s development.',
 
@@ -31,7 +31,7 @@ export const HOME_COPY = {
     moreThanJust: 'More than a',
     coffeeWord: 'café',
     communityBlurb:
-      'Club 54 aims to create an inclusive ecosystem where youth, professionals, and community partners collaborate through real-world learning opportunities.',
+      'Club54 aims to create an inclusive ecosystem where youth, professionals, and community partners collaborate through real-world learning opportunities.',
 
     communityVibes: 'Inclusive ecosystem',
     communityVibesDesc:
@@ -71,12 +71,12 @@ export const HOME_COPY = {
     heroTitleBefore: 'នវានុវត្តន៍សង្គមសម្រាប់',
     heroTitleAccent: 'យុវជន',
     heroSubtitle:
-      'Club 54 ជាកាហ្វេនវានុវត្តន៍សង្គម និងកន្លែងសហការដែលពង្រឹងកុមារ និងយុវជន—ជាពិសេសពីសហគមន៍ងាយរងគ្រោះ—តាមរយៈភាពច្នៃប្រឌិត ជំនាញ និងការចូលរួមសហគមន៍។',
+      'Club54 ជាកាហ្វេនវានុវត្តន៍សង្គម និងកន្លែងសហការដែលពង្រឹងកុមារ និងយុវជន—ជាពិសេសពីសហគមន៍ងាយរងគ្រោះ—តាមរយៈភាពច្នៃប្រឌិត ជំនាញ និងការចូលរួមសហគមន៍។',
     visitUsToday: 'ទាក់ទងយើង',
     viewMenu: 'អានសង្ខេប',
     heroImageAlt: 'កាហ្វេ និងកន្លែងសហគមន៍',
 
-    whatWeOffer: 'Club 54 គឺជាអ្វី',
+    whatWeOffer: 'Club54 គឺជាអ្វី',
     whatWeOfferSub:
       'កាហ្វេសហគមន៍ កន្លែងសហការ និងបរិយាកាសរៀនសូត្ររបស់យុវជន—រចនាឡើងដោយបានស្រមៃពីមាត្រា ៥៤ នៃអនុសញ្ញាសិទ្ធិកុមាររបស់អង្គការសហប្រជាជាតិ (CRC) ស្តីពីការចូលដំណើរការព័ត៌មាន ឱកាស និងការគាំទ្រការអភិវឌ្ឍន៍កុមារ។',
 
@@ -98,7 +98,7 @@ export const HOME_COPY = {
     moreThanJust: 'លើសពី',
     coffeeWord: 'កាហ្វេ',
     communityBlurb:
-      'Club 54 មានគោលបំណងបង្កើតប្រព័ន្ធរួមបញ្ចូលដែលយុវជន អាជីវកម្ម និងដៃគូសហគមន៍សហការរួមគ្នាតាមរយៈឱកាសរៀននៅក្នុងពិភពពិត។',
+      'Club54 មានគោលបំណងបង្កើតប្រព័ន្ធរួមបញ្ចូលដែលយុវជន អាជីវកម្ម និងដៃគូសហគមន៍សហការរួមគ្នាតាមរយៈឱកាសរៀននៅក្នុងពិភពពិត។',
 
     communityVibes: 'ប្រព័ន្ធរួមបញ្ចូល',
     communityVibesDesc:

@@ -24,7 +24,7 @@ export default function CommunityPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-medium uppercase tracking-widest text-red">{t.heroEyebrow}</p>
-              <h1 className="mb-6 text-4xl font-bold uppercase tracking-wide md:text-6xl">
+              <h1 className="mb-6 text-4xl font-bold tracking-wide md:text-6xl">
                 {t.heroTitleBefore}
                 <span className="text-red">{t.heroTitleAccent}</span>
               </h1>
@@ -38,7 +38,7 @@ export default function CommunityPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-20 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
               <div>
-                <h2 className="mb-6 text-4xl font-bold uppercase tracking-wide text-black">
+                <h2 className="mb-6 text-4xl font-bold tracking-wide text-black">
                   {t.joinTitleBefore}
                   <span className="text-red">{t.joinTitleAccent}</span>
                 </h2>
@@ -55,7 +55,7 @@ export default function CommunityPage() {
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
                 {t.impactAreas.map((area) => (
                   <div key={area.title} className="rounded-xl border border-black/10 bg-white p-6 shadow-sm">
-                    <h3 className="mb-2 text-lg font-bold uppercase leading-snug text-red">{area.title}</h3>
+                    <h3 className="mb-2 text-lg font-bold leading-snug text-red">{area.title}</h3>
                     <p className="text-sm leading-relaxed text-black/75">{area.body}</p>
                   </div>
                 ))}
@@ -68,7 +68,7 @@ export default function CommunityPage() {
         <section className="border-t border-black/10 bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-16 text-center">
-              <h2 className="mb-4 text-4xl font-bold uppercase tracking-wide text-black">{t.programsTitle}</h2>
+              <h2 className="mb-4 text-4xl font-bold tracking-wide text-black">{t.programsTitle}</h2>
               <p className="mx-auto max-w-2xl text-xl text-black/75">{t.programsSub}</p>
             </div>
 
@@ -83,7 +83,7 @@ export default function CommunityPage() {
                     <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red text-white">
                       <ProgramIcon className="h-7 w-7" strokeWidth={2} aria-hidden />
                     </div>
-                    <h3 className="mb-4 text-2xl font-bold uppercase text-black">{item.title}</h3>
+                    <h3 className="mb-4 text-2xl font-bold text-black">{item.title}</h3>
                     <p className="mb-4 leading-relaxed text-black/80">{item.body}</p>
                     <div className="text-sm font-medium text-red">{item.when}</div>
                   </div>
@@ -102,7 +102,7 @@ export default function CommunityPage() {
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-red text-white">
                     <UsersRound className="h-8 w-8" strokeWidth={2} aria-hidden />
                   </div>
-                  <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.partnershipTitle}</h3>
+                  <h3 className="mb-4 text-2xl font-bold text-black">{t.partnershipTitle}</h3>
                   <p className="mb-6 leading-relaxed text-black/80">{t.partnershipSub}</p>
                   <ul className="space-y-3 text-sm text-black/80">
                     {t.partnershipBullets.map((line) => (
@@ -120,7 +120,7 @@ export default function CommunityPage() {
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-red text-white">
                     <Megaphone className="h-8 w-8" strokeWidth={2} aria-hidden />
                   </div>
-                  <h3 className="mb-4 text-2xl font-bold uppercase text-black">{t.communicationTitle}</h3>
+                  <h3 className="mb-4 text-2xl font-bold text-black">{t.communicationTitle}</h3>
                   <p className="mb-6 leading-relaxed text-black/80">{t.communicationSub}</p>
                   <ul className="space-y-3 text-sm text-black/80">
                     {t.communicationBullets.map((line) => (
@@ -143,7 +143,7 @@ export default function CommunityPage() {
         {/* Intellectual ownership */}
         <section className="border-t border-black/10 bg-black/[0.03] py-20">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="mb-6 text-3xl font-bold uppercase tracking-wide text-black">{t.ipTitle}</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-wide text-black">{t.ipTitle}</h2>
             <p className="mb-6 text-lg leading-relaxed text-black/80">{t.ipLead}</p>
             <p className="text-base leading-relaxed text-black/75">{t.ipClosing}</p>
           </div>
@@ -152,7 +152,7 @@ export default function CommunityPage() {
         {/* CTA */}
         <section className="border-t border-black/10 bg-black py-20 text-white">
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="mb-6 text-4xl font-bold uppercase tracking-wide md:text-5xl">
+            <h2 className="mb-6 text-4xl font-bold tracking-wide md:text-5xl">
               {t.ctaTitleBefore}
               <span className="text-red">{t.ctaTitleAccent}</span>
             </h2>

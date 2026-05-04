@@ -4,7 +4,7 @@ export const EVENTS_COPY = {
     heroEyebrow: 'Youth · community · collaboration',
     heroTitle: 'Events, learning & social innovation',
     heroBody:
-      'Club 54 hosts youth ideation and creative projects, training and mentorship, community events and social innovation initiatives, and coffee culture activities that strengthen engagement. Programming evolves as partnerships deepen—this page reflects the concept direction and any live listings below.',
+      'Club54 hosts youth ideation and creative projects, training and mentorship, community events and social innovation initiatives, and coffee culture activities that strengthen engagement. Programming evolves as partnerships deepen—this page reflects the concept direction and any live listings below.',
 
     hostTitle: 'What works well here',
     hostSub:
@@ -95,7 +95,7 @@ export const EVENTS_COPY = {
     heroEyebrow: 'យុវជន · សហគមន៍ · សហការ',
     heroTitle: 'ព្រឹត្តិការណ៍ ការរៀន និងនវានុវត្តន៍សង្គម',
     heroBody:
-      'Club 54 រៀបចំការរកឃើញគំនិត និងគម្រោងច្នៃប្រឌិតរបស់យុវជន ការបណ្តុះបណ្តាល និងការណែនាំ ព្រឹត្តិការណ៍សហគមន៍ និងផែនការនវានុវត្តន៍សង្គម រួមទាំងសកម្មភាពវប្បធម៌កាហ្វេដែលពង្រឹងការចូលរួម។ កម្មវិធីរីកចម្រើនតាមភាពជាដៃគូ—ទំព័រនេះបង្ហាញទិសដៅគំនិត និងបញ្ជីផ្ទាល់ខាងក្រោមប្រសិនបើមាន។',
+      'Club54 រៀបចំការរកឃើញគំនិត និងគម្រោងច្នៃប្រឌិតរបស់យុវជន ការបណ្តុះបណ្តាល និងការណែនាំ ព្រឹត្តិការណ៍សហគមន៍ និងផែនការនវានុវត្តន៍សង្គម រួមទាំងសកម្មភាពវប្បធម៌កាហ្វេដែលពង្រឹងការចូលរួម។ កម្មវិធីរីកចម្រើនតាមភាពជាដៃគូ—ទំព័រនេះបង្ហាញទិសដៅគំនិត និងបញ្ជីផ្ទាល់ខាងក្រោមប្រសិនបើមាន។',
 
     hostTitle: 'អ្វីដែលសាកសមនៅទីនេះ',
     hostSub:
