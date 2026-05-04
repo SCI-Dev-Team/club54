@@ -159,20 +159,23 @@ export default function ContactPage() {
               <p className="text-xl text-gray-600">{SITE_CONTACT.addressFull}</p>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl overflow-hidden shadow-lg h-[500px] flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-red rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-10 h-10 text-white" strokeWidth={2} aria-hidden />
-                </div>
-                <h3 className="text-2xl font-bold text-black mb-2 uppercase">Club 54</h3>
-                <p className="text-gray-700 mb-1">{SITE_CONTACT.addressLine1}</p>
-                <p className="text-gray-700">{SITE_CONTACT.addressLine2}, {SITE_CONTACT.country}</p>
+            <div className="overflow-hidden rounded-xl shadow-lg ring-1 ring-black/10">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.9022784206986!2d104.92405801003447!3d11.558862844228354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513a11e8253b%3A0x2655e7df533763a9!2sSave%20the%20Children%20in%20Cambodia!5e0!3m2!1sen!2skh!4v1777886837166!5m2!1sen!2skh"
+                title="Club 54 area — Google Maps"
+                width="600"
+                height="450"
+                className="h-[450px] w-full border-0 max-md:h-[320px]"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="flex justify-center bg-white px-4 py-4">
                 <a
                   href={SITE_CONTACT.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-6 bg-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-plum transition-colors uppercase tracking-wide"
+                  className="inline-flex shrink-0 items-center rounded-lg bg-red px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-plum"
                 >
                   Open in Google Maps
                 </a>
